@@ -1,6 +1,7 @@
 let app = getApp();
 const AV = require('../../utils/av-weapp-min.js');
 let load = require('../../load.js');
+const common = require('../../utils/common');
 
 let zIndex = 10000; //zindex全局变量
 let touch = {
@@ -26,42 +27,44 @@ Page({
     listArr: null,
     likeArr: [],
     unlikeArr: [],
-    movieData: {}
+    userList: {}
   },
 
   onLoad: function () {
-    wx.showLoading({
-      title: '加载中...',
-    });
+    common.showLoading();
+    let that = this;
     let isShowId, listArr;
-    let movieData = this.data.movieData;
     this.setData({
       windowHeight: app.globalData.windowInfo.height,
       windowWidth: app.globalData.windowInfo.width
     });
-    let that = this;
     app.getUserInfo(function (userInfo) {
       that.setData({
         userInfo
       });
-      load.getMovieData({
+      load.getuserList({
         fromId: userInfo.lastViewId,
         success: ({
-                    movieData,
+                    userList,
                     idSets
                   }) => {
+          console.log('userList', userList);
+          console.log('idSets', idSets);
+
           wx.hideLoading();
+
           listArr = Array.from(idSets);
           isShowId = listArr[0];
           for (let i = 0; i < listArr.length; i++) {
-            movieData[listArr[i]].zIndex = --zIndex;
+            userList[listArr[i]].zIndex = --zIndex;
           }
           that.setData({
-            movieData,
+            userList,
             idSets,
             isShowId,
-            listArr
-          })
+            listArr,
+            user: app.globalData.user
+          });
         }
       })
     })
@@ -81,7 +84,7 @@ Page({
   },
   //触摸移动事件
   touchMove: function (e) {
-    let movieData, rotate;
+    let userList, rotate;
     let currentPoint = e.touches[e.touches.length - 1];
     let translateX = currentPoint.clientX - touch.startPoint.clientX;
     let translateY = currentPoint.clientY - touch.startPoint.clientY;
@@ -101,22 +104,22 @@ Page({
     }
     this.animation.rotate(rotate).translate(translateX, 10).step();
     let id = this.data.isShowId;
-    movieData = this.data.movieData;
-    movieData[id].animationData = this.animation.export();
+    userList = this.data.userList;
+    userList[id].animationData = this.animation.export();
     this.setData({
-      movieData
+      userList
     })
-
   },
   // 触摸结束事件
   touchEnd: function (e) {
     // return;
-    let movieData;
+    let userList;
     let translateX = e.changedTouches[0].clientX - touch.startPoint.clientX;
     let translateY = e.changedTouches[0].clientY - touch.startPoint.clientY;
     let timeStampEnd = new Date().getTime();
     let time = timeStampEnd - this.touch.timeStampStart;
-    let id = this.data.isShowId;
+    let jack = this.data.user.id;
+    let rose = this.data.isShowId;
     let animation = wx.createAnimation({
       duration: 250,
       timingFunction: 'ease',
@@ -128,32 +131,32 @@ Page({
         //右划
         this.markAsRead();
         animation.rotate(0).translate(this.data.windowWidth, 0).step();
-        movieData = this.data.movieData;
-        movieData[id].animationData = animation.export();
+        userList = this.data.userList;
+        userList[rose].animationData = animation.export();
         this.setData({
-          movieData
+          userList
         });
         load.likeAction({
           action: 'like',
-          uid: app.globalData.userInfo.objectId,
-          objectId: id
+          jack: jack,
+          rose: rose
         })
       } else if (translateX < -40) {
         //左划
         this.markAsRead();
         animation.rotate(0).translate(-this.data.windowWidth, 0).step();
-        movieData = this.data.movieData;
-        movieData[id].animationData = animation.export();
+        userList = this.data.userList;
+        userList[id].animationData = animation.export();
         this.setData({
-          movieData
+          userList
         })
       } else {
         //返回原位置
         animation.rotate(0).translate(0, 0).step();
-        movieData = this.data.movieData;
-        movieData[this.data.isShowId].animationData = animation.export();
+        userList = this.data.userList;
+        userList[this.data.isShowId].animationData = animation.export();
         this.setData({
-          movieData,
+          userList,
         })
       }
     } else {
@@ -161,32 +164,32 @@ Page({
         //右划
         this.markAsRead();
         animation.rotate(0).translate(this.data.windowWidth, 0).step();
-        movieData = this.data.movieData;
-        movieData[id].animationData = animation.export();
+        userList = this.data.userList;
+        userList[rose].animationData = animation.export();
         this.setData({
-          movieData
+          userList
         });
         load.likeAction({
           action: 'like',
-          uid: app.globalData.userInfo.objectId,
-          objectId: id
+          jack: jack,
+          rose: rose
         })
       } else if (translateX < -160) {
         //左划
         this.markAsRead();
         animation.rotate(0).translate(-this.data.windowWidth, 0).step();
-        movieData = this.data.movieData;
-        movieData[id].animationData = animation.export();
+        userList = this.data.userList;
+        userList[rose].animationData = animation.export();
         this.setData({
-          movieData
+          userList
         })
       } else {
         //返回原位置
         animation.rotate(0).translate(0, 0).step();
-        movieData = this.data.movieData;
-        movieData[this.data.isShowId].animationData = animation.export();
+        userList = this.data.userList;
+        userList[this.data.isShowId].animationData = animation.export();
         this.setData({
-          movieData,
+          userList,
         })
       }
     }
@@ -196,26 +199,26 @@ Page({
     this.clickAnimation({
       direction: 'right'
     });
-    let id = this.data.isShowId;
+    let rose = this.data.isShowId;
     let likeArr = this.data.likeArr;
-    likeArr.push(id);
+    likeArr.push(rose);
     this.setData({
       likeArr
     });
     this.markAsRead();
     load.likeAction({
       action: 'like',
-      uid: app.globalData.userInfo.objectId,
-      objectId: id
+      jake: this.data.user.id,
+      rose: rose
     })
   },
   onUnlike: function () {
     this.clickAnimation({
       direction: 'left'
     });
-    let id = this.data.isShowId;
+    let rose = this.data.isShowId;
     let unlikeArr = this.data.unlikeArr;
-    unlikeArr.push(id);
+    unlikeArr.push(rose);
 
     this.setData({
       unlikeArr
@@ -223,45 +226,43 @@ Page({
     this.markAsRead();
     load.likeAction({
       action: 'unlike',
-      uid: app.globalData.userInfo.objectId,
-      objectId: id
+      jack: this.data.user.id,
+      rose: rose
     })
   },
   markAsRead: function () {
-    let id = this.data.isShowId;
-    let movieData = this.data.movieData;
+    let rose = this.data.isShowId;
+    let userList = this.data.userList;
     let listArr = this.data.listArr;
     let length = this.finRemainArrLength({
       listArr,
-      id
+      rose
     });
     let slideTimes = this.data.slideTimes;
     slideTimes++;
     if (length <= 3) {
       this.loadMore();
     }
-    let i = listArr.indexOf(id);
+    let i = listArr.indexOf(rose);
     let nextId = listArr[i + 1];
 
     this.setData({
       isShowId: nextId,
       slideTimes
-    })
+    });
     if (this.data.slideTimes >= 4) {
-      this.deleteItem(id)
+      this.deleteItem(rose)
     }
 
-    this.saveLastViewId(id);
+    this.saveLastViewId(rose);
   },
   saveLastViewId: function (id) {
-    const _user = AV.Object.createWithoutData('_User', this.data.userInfo.objectId);
-    // 修改属性
+    const _user = AV.Object.createWithoutData('_User', this.data.user.id);
     _user.set('lastViewId', id);
-    // 保存到云端
     _user.save();
   },
   clickAnimation: function (params) {
-    let x, y, duration, rotate, movieData;
+    let x, y, duration, rotate, userList;
     duration = 700;
     y = 100;
     if (params.direction === 'left') {
@@ -279,41 +280,41 @@ Page({
     });
     let id = this.data.isShowId;
     this.animation.rotate(rotate).translate(x, y).step();
-    movieData = this.data.movieData;
-    movieData[id].animationData = this.animation.export();
+    userList = this.data.userList;
+    userList[id].animationData = this.animation.export();
     this.setData({
-      movieData
+      userList
     })
   },
   finRemainArrLength: function (params) {
-    let i = params.listArr.indexOf(params.id) + 1;
+    let i = params.listArr.indexOf(params.rose) + 1;
     return params.listArr.slice(i).length;
   },
   loadMore: function () {
-    let _movieData, _listArr, _isShowId, fromId;
+    let _userList, _listArr, _isShowId, fromId;
     fromId = [].concat(this.data.listArr).pop();
     if (!this.data.isLoadingEnd) {
-      load.getMovieData({
+      load.getuserList({
         fromId: fromId,
         success: ({
-                    movieData,
+                    userList,
                     idSets,
                   }) => {
           if (idSets.size === 0) {
             this.setData({
               isLoadingEnd: true
-            })
+            });
             return;
           }
-          _movieData = Object.assign({}, this.data.movieData, movieData);
+          _userList = Object.assign({}, this.data.userList, userList);
           _listArr = Array.from(idSets);
           for (let i = 0; i < _listArr.length; i++) {
-            _movieData[_listArr[i]].zIndex = --zIndex;
-            _movieData[_listArr[i]].isRender = true;
+            _userList[_listArr[i]].zIndex = --zIndex;
+            _userList[_listArr[i]].isRender = true;
           }
           let listArrPlus = this.data.listArr.concat(_listArr);
           this.setData({
-            movieData: _movieData,
+            userList: _userList,
             listArr: listArrPlus
           })
         }
@@ -326,14 +327,14 @@ Page({
     let _listArr;
     if (index >= 3) {
       setTimeout(() => {
-        let movieData = Object.assign({}, this.data.movieData);
+        let userList = Object.assign({}, this.data.userList);
         for (let i = 0; i < index - 3; i++) {
           let id = listArr[i];
-          movieData[id].isRender = false;
+          userList[id].isRender = false;
         }
         this.setData({
           slideTimes: 0,
-          movieData
+          userList
         })
       }, 1000)
 

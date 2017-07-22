@@ -11,7 +11,7 @@ Page({
     data: {
         isEmpty: false,
         isLoadingEnd: false,
-        movieData: {},
+        userList: {},
         listArr: [],
         userInfo: {}
     },
@@ -42,15 +42,15 @@ Page({
                     }
                     console.log(data)
                     let listArr = [].concat(this.data.listArr),
-                        movieData = Object.assign({}, this.data.movieData);
+                        userList = Object.assign({}, this.data.userList);
                     for (let i = 0; i < data.length; ++i) {
                         let id = data[i].id;
                         listArr.push(data[i].id);
-                        movieData[id] = data[i].attributes.movie.attributes;
+                        userList[id] = data[i].attributes.movie.attributes;
                     }
                     this.setData({
                         listArr,
-                        movieData
+                        userList
                     })
                 }
             });
@@ -90,15 +90,15 @@ Page({
                         return;
                     }
                     let listArr = [].concat(this.data.listArr),
-                        movieData = Object.assign({}, this.data.movieData);
+                        userList = Object.assign({}, this.data.userList);
                     for (let i = 0; i < data.length; ++i) {
                         let id = data[i].id;
                         listArr.push(data[i].id);
-                        movieData[id] = data[i].attributes.movie.attributes;
+                        userList[id] = data[i].attributes.movie.attributes;
                     }
                     this.setData({
                         listArr,
-                        movieData
+                        userList
                     })
                 }
             });

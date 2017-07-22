@@ -1,8 +1,9 @@
-import {HOST, LIMIT} from 'constans.js';
+import {TOGGLE_API, HOST, LIMIT} from 'constans.js';
+
 const AV = require('./utils/av-weapp-min.js');
 
 const load = {
-  getMovieData: function (params) {
+  getuserList: function (params) {
     let objectId;
     if (params.fromId) {
       objectId = params.fromId;
@@ -24,95 +25,69 @@ const load = {
     }
     let whereStr = encodeURIComponent(JSON.stringify(where));
 
-    // console.log('start request arthas')
-    // wx.request({
-    //   url: `https://arthaszeng.win/movies/?limit=${LIMIT}`,
-    //   header: {
-    //     'content-type': 'application/json'
-    //   },
-    //   success: (data) => {
-    //     console.log('moviedata', data);
-    //
-    //     let arr = data.data;
-    //     let _data = {},
-    //       idSets = new Set();
-    //     for (let i = 0; i < arr.length; ++i) {
-    //       let id = arr[i].objectId;
-    //       _data[id] = arr[i];
-    //       idSets.add(id);
-    //       _data[id].isRender = true;
-    //     }
-    //     params.success({
-    //       movieData: _data,
-    //       idSets
-    //     });
-    //   }
-    // });
-
-
-    this.leancloudRequest({
-      url: `${HOST}/classes/MovieData?limit=${LIMIT}&where=${whereStr}`,
-      success: (data) => {
-        console.log('moviedata', data)
-        let arr = data.results;
-        let _data = {},
-          idSets = new Set();
-        for (let i = 0; i < arr.length; ++i) {
-          let id = arr[i].objectId;
-          _data[id] = arr[i];
-          idSets.add(id);
-          _data[id].isRender = true;
+    if (TOGGLE_API) {
+      console.log('start request arthas');
+      wx.request({
+        url: `${HOST}/users/?limit=${LIMIT}`,
+        header: {
+          'content-type': 'application/json'
+        },
+        success: (data) => {
+          console.log('fetched user data from arthas:');
+          console.log(data);
+          let arr = data.data;
+          let _data = {},
+            idSets = new Set();
+          for (let i = 0; i < arr.length; ++i) {
+            let id = arr[i].objectId;
+            _data[id] = arr[i];
+            idSets.add(id);
+            _data[id].isRender = true;
+          }
+          params.success({
+            userList: _data,
+            idSets
+          });
         }
-        params.success({
-          movieData: _data,
-          idSets
-        });
-      }
-    })
+      });
+    } else {
+      this.leancloudRequest({
+        url: `${HOST}/classes/userList?limit=${LIMIT}&where=${whereStr}`,
+        success: (data) => {
+          console.log('userList', data)
+          let arr = data.results;
+          let _data = {},
+            idSets = new Set();
+          for (let i = 0; i < arr.length; ++i) {
+            let id = arr[i].objectId;
+            _data[id] = arr[i];
+            idSets.add(id);
+            _data[id].isRender = true;
+          }
+          params.success({
+            userList: _data,
+            idSets
+          });
+        }
+      })
+    }
   },
   likeAction: function (params) {
     if (params.action === 'like') {
-      const LikeList = AV.Object.extend('LikeList');
+      const LikeList = AV.Object.extend('Match');
       const likeItem = new LikeList();
 
-      const movie = AV.Object.createWithoutData('MovieData', params.objectId);
-      const user = AV.Object.createWithoutData('_User', params.uid);
+      const jack = AV.Object.createWithoutData('_User', params.jack);
+      const rose = AV.Object.createWithoutData('_User', params.rose);
 
-      likeItem.set('movie', movie);
-      likeItem.set('user', user);
+      likeItem.set('jack', jack);
+      likeItem.set('rose', rose);
 
       likeItem.save().then(function (data) {
       }, function (error) {
         console.error(error);
       });
     }
-  },
-  request: function (params) {
-    const obj = {
-      method: params.method,
-      mode: 'cors'
-    };
-    let url = `${params.url}`;
-    let method = params.method;
-
-    if (method === 'POST' || method === 'DELETE') {
-      obj.body = JSON.stringify(params.body);
-    }
-    wx.request({
-      url: url,
-      method: method || "GET",
-      data: method === 'GET' ? null : obj,
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        try {
-          params.success(res.data);
-        } catch (e) {
-          console.log(e)
-        }
-      }
-    })
   },
   leancloudRequest: function (params) {
     let url = `${params.url}`;

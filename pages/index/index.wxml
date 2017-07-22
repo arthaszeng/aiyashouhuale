@@ -2,16 +2,16 @@
   <scroll-view class="page-container">
     <view class="list-container"  wx:if="{{!isLoadingEnd}}" style="width:{{windowWidth}}px;">
       <view wx:for="{{listArr}}" wx:key="{{item}}">
-        <block wx:if="{{movieData[item].isRender}}">
-          <view style="z-index:{{movieData[item].zIndex}};" class="item-container" animation="{{movieData[item].animationData}}" >
+        <block wx:if="{{userList[item].isRender}}">
+          <view style="z-index:{{userList[item].zIndex}};" class="item-container" animation="{{userList[item].animationData}}" >
             <view class="pic-box" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
-              <image class="pic" mode="scaleToFill" src="{{movieData[item].picUrl}}"/>
+              <image class="pic" mode="scaleToFill" src="{{userList[item].images[0]}}"/>
               <view class="mask"/>
               <view class="text-box">
-                <text class="cn-name">{{movieData[item].name}}</text>
+                <text class="cn-name">{{userList[item].nickName}}</text>
                 <view class="score-box">
                   <text class="score-name">豆瓣评分：</text>
-                  <text class="score">{{movieData[item].score}}</text>
+                  <text class="score">{{userList[item].score}}</text>
                 </view>
               </view>
             </view>

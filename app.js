@@ -1,4 +1,5 @@
 const AV = require('./utils/av-weapp-min.js');
+
 AV.init({
   appId: 'WWfarQ5WJWyBODyeS3YdWoce-gzGzoHsz',
   appKey: '9jvhzsjWx2wJm5zizXdgV0Qq',
@@ -6,7 +7,7 @@ AV.init({
 
 App({
   globalData: {
-    movieData: null,
+    userList: null,
     userInfo: null,
     windowInfo: {}
   },
