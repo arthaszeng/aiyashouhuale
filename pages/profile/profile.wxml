@@ -1,0 +1,46 @@
+<view class="container">
+    <view class="page__bd">
+        <view class="weui-cells no-border">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__hd">
+                            <view class="weui-uploader__title">上传照片</view>
+                            <view class="weui-uploader__info">{{images.files.length + images.urls.length}}/9</view>
+                        </view>
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for-items="{{images.files}}" wx:key="{{index}}">
+                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill"/>
+                                    </view>
+                                </block>
+                                <block wx:for-items="{{images.urls}}" wx:key="{{index}}">
+                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill"/>
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="chooseImage"/>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="user-summary-view">
+        <view class="name">{{nickName}}</view>
+        <view class="age-constellation" bindtap="editUserInfo">
+            <view class="weui-cell__ft">
+                <image class="icon-right" src="../../icon/arrow-right.png"/>
+            </view>
+            <view class="age-male" wx:if="gender===1">24</view>
+            <!--<view class="age-female" wx:if="gender===0">24</view>-->
+            <view class="constellation">双子座</view>
+        </view>
+        <view class="tips">点击编辑个人信息（如姓名、年龄、性别）</view>
+    </view>
+</view>

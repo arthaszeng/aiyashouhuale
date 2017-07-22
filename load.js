@@ -22,7 +22,34 @@ const load = {
         $gt: objectId
       }
     }
-    let whereStr = encodeURIComponent(JSON.stringify(where))
+    let whereStr = encodeURIComponent(JSON.stringify(where));
+
+    // console.log('start request arthas')
+    // wx.request({
+    //   url: `https://arthaszeng.win/movies/?limit=${LIMIT}`,
+    //   header: {
+    //     'content-type': 'application/json'
+    //   },
+    //   success: (data) => {
+    //     console.log('moviedata', data);
+    //
+    //     let arr = data.data;
+    //     let _data = {},
+    //       idSets = new Set();
+    //     for (let i = 0; i < arr.length; ++i) {
+    //       let id = arr[i].objectId;
+    //       _data[id] = arr[i];
+    //       idSets.add(id);
+    //       _data[id].isRender = true;
+    //     }
+    //     params.success({
+    //       movieData: _data,
+    //       idSets
+    //     });
+    //   }
+    // });
+
+
     this.leancloudRequest({
       url: `${HOST}/classes/MovieData?limit=${LIMIT}&where=${whereStr}`,
       success: (data) => {

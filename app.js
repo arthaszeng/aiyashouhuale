@@ -3,8 +3,6 @@ AV.init({
   appId: 'WWfarQ5WJWyBODyeS3YdWoce-gzGzoHsz',
   appKey: '9jvhzsjWx2wJm5zizXdgV0Qq',
 });
-const user = AV.User.current();
-
 
 App({
   globalData: {
@@ -14,20 +12,49 @@ App({
   },
 
   onLaunch: function () {
-    this.test();
     try {
-      var res = wx.getSystemInfoSync()
+      const res = wx.getSystemInfoSync();
       this.globalData.windowInfo.width = res.windowWidth;
       this.globalData.windowInfo.height = res.windowHeight;
+      this.loginWithLCAndWeapp();
     } catch (e) {
       console.log(e)
-      // Do something when catch error
     }
+  },
+
+  loginWithLCAndWeapp: function () {
+    AV.Promise.resolve(AV.User.current())
+      .then(user => user ? (user.isAuthenticated().then(authed => authed ? user : null)) : null
+      ).then(user =>
+      user ? user : AV.User.loginWithWeapp()
+    ).then(user => {
+      this.globalData.user = user;
+      this.syncUserInfo();
+    }).catch(error => console.error(error.message));
+  },
+
+
+  syncUserInfo: function () {
+    let that = this;
+    wx.login({
+      success: function () {
+        wx.getUserInfo({
+          success: function (res) {
+            that.globalData.user
+              .set('nickName', res.userInfo.nickName)
+              .set('province', res.userInfo.province)
+              .set('city', res.userInfo.city)
+              .set('avatar', res.userInfo.avatarUrl)
+              .set('gender', res.userInfo.gender)
+              .save()
+          }
+        })
+      }
+    })
   },
   getUserInfo: function(cb) {
     AV.User.loginWithWeapp().then(userInfo => {
       const user = AV.User.current();
-      // 调用小程序 API，得到用户信息
       wx.getUserInfo({
         success: ({
                     userInfo
@@ -42,23 +69,4 @@ App({
       });
     }).catch(console.error);
   },
-
-  test: function () {
-    wx.request({
-      url: 'https://arthaszeng.win/swagger/api-docs/categories/1', //仅为示例，并非真实的接口地址
-      data: {
-        x: '' ,
-        y: ''
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function(res) {
-        console.log(res.data)
-      },
-      fail: function (error) {
-        console.log(error)
-      }
-    })
-  }
 });

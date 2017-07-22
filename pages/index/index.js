@@ -342,7 +342,7 @@ Page({
   toUserList: function () {
     try {
       wx.navigateTo({
-        url: '../like/like'
+        url: '../profile/profile'
       });
     } catch (e) {
       console.log(e);
@@ -362,5 +362,5 @@ Page({
         console.log(res)
       }
     }
-  }
+  },
 })
