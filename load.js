@@ -1,4 +1,4 @@
-import {TOGGLE_API, HOST, LIMIT} from 'constans.js';
+import {HOST, LIMIT} from 'constans.js';
 
 const AV = require('./utils/av-weapp-min.js');
 
@@ -25,52 +25,30 @@ const load = {
     }
     let whereStr = encodeURIComponent(JSON.stringify(where));
 
-    if (TOGGLE_API) {
-      console.log('start request arthas');
-      wx.request({
-        url: `${HOST}/users/?limit=${LIMIT}`,
-        header: {
-          'content-type': 'application/json'
-        },
-        success: (data) => {
-          console.log('fetched user data from arthas:');
-          console.log(data);
-          let arr = data.data;
-          let _data = {},
-            idSets = new Set();
-          for (let i = 0; i < arr.length; ++i) {
-            let id = arr[i].objectId;
-            _data[id] = arr[i];
-            idSets.add(id);
-            _data[id].isRender = true;
-          }
-          params.success({
-            userList: _data,
-            idSets
-          });
+    console.log('start request arthas');
+    wx.request({
+      url: `${HOST}/users/?limit=${LIMIT}`,
+      header: {
+        'content-type': 'application/json'
+      },
+      success: (data) => {
+        console.log('fetched user data from arthas:');
+        console.log(data);
+        let arr = data.data;
+        let _data = {},
+          idSets = new Set();
+        for (let i = 0; i < arr.length; ++i) {
+          let id = arr[i].objectId;
+          _data[id] = arr[i];
+          idSets.add(id);
+          _data[id].isRender = true;
         }
-      });
-    } else {
-      this.leancloudRequest({
-        url: `${HOST}/classes/userList?limit=${LIMIT}&where=${whereStr}`,
-        success: (data) => {
-          console.log('userList', data)
-          let arr = data.results;
-          let _data = {},
-            idSets = new Set();
-          for (let i = 0; i < arr.length; ++i) {
-            let id = arr[i].objectId;
-            _data[id] = arr[i];
-            idSets.add(id);
-            _data[id].isRender = true;
-          }
-          params.success({
-            userList: _data,
-            idSets
-          });
-        }
-      })
-    }
+        params.success({
+          userList: _data,
+          idSets
+        });
+      }
+    });
   },
   likeAction: function (params) {
     if (params.action === 'like') {

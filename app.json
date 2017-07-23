@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/like/like",
+    "pages/edit/edit",
     "pages/profile/profile"
   ],
   "window": {

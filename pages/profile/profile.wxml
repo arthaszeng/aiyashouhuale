@@ -1,35 +1,14 @@
 <view class="container">
-    <view class="page__bd">
-        <view class="weui-cells no-border">
-            <view class="weui-cell">
-                <view class="weui-cell__bd">
-                    <view class="weui-uploader">
-                        <view class="weui-uploader__hd">
-                            <view class="weui-uploader__title">上传照片</view>
-                            <view class="weui-uploader__info">{{images.files.length + images.urls.length}}/9</view>
-                        </view>
-                        <view class="weui-uploader__bd">
-                            <view class="weui-uploader__files" id="uploaderFiles">
-                                <block wx:for-items="{{images.files}}" wx:key="{{index}}">
-                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
-                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill"/>
-                                    </view>
-                                </block>
-                                <block wx:for-items="{{images.urls}}" wx:key="{{index}}">
-                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
-                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill"/>
-                                    </view>
-                                </block>
-                            </view>
-                            <view class="weui-uploader__input-box">
-                                <view class="weui-uploader__input" bindtap="chooseImage"/>
-                            </view>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </view>
+    <view class="topbar-view">
+        <image bindtap="goMenu" class="menu-icon" mode="aspectFill" src="../../icon/menu.png"/>
+        <view class="title-view">个人资料</view>
+        <image bindtap="goEdit" class="edit-icon" mode="aspectFill" src="../../icon/edit.png"/>
     </view>
+    <swiper autoplay="false" class="swiper-view" indicator-dots="True" lower-threshold="50">
+        <swiper-item class="swiper-item" wx:for="{{images.urls}}" wx:key="">
+            <image bindtap="previewImage" class="swiper-image" id="{{index}}" mode="aspectFill" src="{{item}}"/>
+        </swiper-item>
+    </swiper>
 
     <view class="user-summary-view">
         <view class="name">{{nickName}}</view>

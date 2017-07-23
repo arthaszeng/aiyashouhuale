@@ -340,7 +340,7 @@ Page({
 
     }
   },
-  toUserList: function () {
+  toUserEdit: function () {
     try {
       wx.navigateTo({
         url: '../profile/profile'
@@ -364,4 +364,4 @@ Page({
       }
     }
   },
-})
+});

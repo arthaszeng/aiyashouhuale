@@ -1,0 +1,44 @@
+<view class="container">
+    <view class="image-container" style="height:{{width}}px;width:{{width}}">
+        <view class="line-1">
+            <view class="image-1 weui-uploader__input-box" bindtap="chooseImage" wx:if="{{images.urls.length===0}}"/>
+            <image class="weui-uploader__img image-1" src="{{images.urls[0]}}" bindtap="imageAction" mode="aspectFill" wx:else="{{images.urls.length===0}}" id="0"/>
+
+            <view class="image-2-and-3">
+                <view class="image weui-uploader__input-box" bindtap="chooseImage" style="margin-bottom: 10rpx" wx:if="{{images.urls.length<=1}}"/>
+                <image class="weui-uploader__img image" style="margin-bottom: 10rpx" src="{{images.urls[1]}}" wx:else="{{images.urls.length<=1}}" id="1"
+                       bindtap="imageAction" mode="aspectFill"/>
+
+                <view class="image weui-uploader__input-box" bindtap="chooseImage" wx:if="{{images.urls.length<=2}}"/>
+                <image class="weui-uploader__img image" src="{{images.urls[2]}}" wx:else="{{images.urls.length<=2}}" id="2"
+                       bindtap="imageAction" mode="aspectFill"/>
+            </view>
+        </view>
+        <view class="line-2">
+            <view class="image weui-uploader__input-box" style="margin-right: 10rpx" bindtap="chooseImage" wx:if="{{images.urls.length<=5}}"/>
+            <image class="weui-uploader__img image" style="margin-right: 10rpx" src="{{images.urls[5]}}" wx:else="{{images.urls.length<=5}}" id="5"
+                   bindtap="imageAction" mode="aspectFill"/>
+
+            <view class="image weui-uploader__input-box" style="margin-right: 10rpx" bindtap="chooseImage" wx:if="{{images.urls.length<=4}}"/>
+            <image class="weui-uploader__img image" style="margin-right: 10rpx" src="{{images.urls[4]}}" wx:else="{{images.urls.length<=4}}" id="4"
+                   bindtap="imageAction" mode="aspectFill"/>
+
+            <view class="image weui-uploader__input-box" bindtap="chooseImage" wx:if="{{images.urls.length<=3}}"/>
+            <image class="weui-uploader__img image" src="{{images.urls[3]}}" wx:else="{{images.urls.length<=3}}" id="3"
+                   bindtap="imageAction" mode="aspectFill"/>
+        </view>
+    </view>
+
+    <view class="user-summary-view">
+        <view class="name">{{nickName}}</view>
+        <view class="age-constellation" bindtap="editUserInfo">
+            <view class="weui-cell__ft">
+                <image class="icon-right" src="../../icon/arrow-right.png"/>
+            </view>
+            <view class="age-male" wx:if="gender===1">24</view>
+            <!--<view class="age-female" wx:if="gender===0">24</view>-->
+            <view class="constellation">双子座</view>
+        </view>
+        <view class="tips">点击编辑个人信息（如姓名、年龄、性别）</view>
+    </view>
+</view>
