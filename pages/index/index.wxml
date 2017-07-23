@@ -1,41 +1,41 @@
 <view class="container">
-  <scroll-view class="page-container">
-    <view class="list-container"  wx:if="{{!isLoadingEnd}}" style="width:{{windowWidth}}px;">
-      <view wx:for="{{listArr}}" wx:key="{{item}}">
-        <block wx:if="{{userList[item].isRender}}">
-          <view style="z-index:{{userList[item].zIndex}};" class="item-container" animation="{{userList[item].animationData}}" >
-            <view class="pic-box" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
-              <image class="pic" mode="scaleToFill" src="{{userList[item].images[0]}}"/>
-              <view class="mask"/>
-              <view class="text-box">
-                <text class="cn-name">{{userList[item].nickName}}</text>
-                <view class="score-box">
-                  <text class="score-name">豆瓣评分：</text>
-                  <text class="score">{{userList[item].score}}</text>
-                </view>
-              </view>
+    <scroll-view class="page-container">
+        <view class="list-container" wx:if="{{!isLoadingEnd}}" style="width:{{windowWidth}}px;">
+            <view wx:for="{{listArr}}" wx:key="{{item}}">
+                <block wx:if="{{userList[item].isRender}}">
+                    <view style="z-index:{{userList[item].zIndex}};" class="item-container" animation="{{userList[item].animationData}}">
+                        <view class="pic-box" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+                            <image class="pic" mode="scaleToFill" src="{{userList[item].images[0]}}"/>
+                            <view class="user-summary-view">
+                                <view class="name">{{userList[item].nickName}}</view>
+                                <view class="age-constellation" bindtap="editUserInfo">
+                                    <view class="age-male" wx:if="gender===1">24</view>
+                                    <!--<view class="age-female" wx:if="gender===0">24</view>-->
+                                    <view class="constellation">双子座</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
             </view>
-          </view>
-        </block>
-      </view>
-    </view>
-    <view wx:elif="{{isLoadingEnd}}" class="end noMore">没有更多了~</view>
-    <view class="buttons">
-      <view class="round-container" bindtap="onUnlike">
-        <view class="cross">
-          <image class="icon cross-icon" src="../../icon/cross.png"/>
         </view>
-      </view>
-      <view class="round-container round-big">
-        <view bindtap="toUserList" class="userinfo">
-          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"/>
+        <view wx:elif="{{isLoadingEnd}}" class="end noMore">没有更多了~</view>
+        <view class="buttons">
+            <view class="round-container" bindtap="onUnlike">
+                <view class="cross">
+                    <image class="icon cross-icon" src="../../icon/cross.png"/>
+                </view>
+            </view>
+            <view class="round-container round-big">
+                <view bindtap="toUserList" class="userinfo">
+                    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"/>
+                </view>
+            </view>
+            <view class="round-container" bindtap="onLike">
+                <view class="heart">
+                    <image class="icon heart-icon" src="../../icon/heart_big.png"/>
+                </view>
+            </view>
         </view>
-      </view>
-      <view class="round-container" bindtap="onLike">
-        <view class="heart" >
-          <image class="icon heart-icon" src="../../icon/heart_big.png"/>
-        </view>
-      </view>
-    </view>
-  </scroll-view>
+    </scroll-view>
 </view>
