@@ -2,6 +2,8 @@ let app = getApp();
 const AV = require('../../utils/av-weapp-min.js');
 let load = require('../../load.js');
 const common = require('../../utils/common');
+import {FETCH_THRESHOLD, Z_INDEX_MAX} from '../../constans.js';
+
 
 let zIndex = 10000; //zindex全局变量
 let touch = {
@@ -240,7 +242,8 @@ Page({
     });
     let slideTimes = this.data.slideTimes;
     slideTimes++;
-    if (length <= 3) {
+
+    if (length <= FETCH_THRESHOLD) {
       this.loadMore();
     }
     let i = listArr.indexOf(rose);
@@ -325,10 +328,10 @@ Page({
     let index = this.data.listArr.indexOf(id);
     let listArr = [].concat(this.data.listArr);
     let _listArr;
-    if (index >= 3) {
+    if (index >= FETCH_THRESHOLD) {
       setTimeout(() => {
         let userList = Object.assign({}, this.data.userList);
-        for (let i = 0; i < index - 3; i++) {
+        for (let i = 0; i < index - FETCH_THRESHOLD; i++) {
           let id = listArr[i];
           userList[id].isRender = false;
         }
@@ -364,4 +367,12 @@ Page({
       }
     }
   },
+
+  goMessage: function () {
+    common.showFail("施工中");
+  },
+
+  goMenu: function () {
+    common.showFail("施工中");
+  }
 });

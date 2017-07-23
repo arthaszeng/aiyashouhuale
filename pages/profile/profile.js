@@ -29,6 +29,16 @@ Page({
     })
   },
 
+  goEdit: function () {
+    wx.navigateTo({
+      url: `../edit/edit`,
+    });
+  },
+
+  goMenu: function () {
+    common.showFail("还在施工");
+  },
+
   previewImage: function (e) {
     console.log(e)
     wx.previewImage({

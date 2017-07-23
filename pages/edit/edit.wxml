@@ -1,4 +1,8 @@
 <view class="container">
+    <view class="topbar-view">
+        <image bindtap="goBack" class="menu-icon" mode="aspectFit" src="../../icon/back.png"/>
+        <view class="title-view">编辑我的信息</view>
+    </view>
     <view class="image-container" style="height:{{width}}px;width:{{width}}">
         <view class="line-1">
             <view class="image-1 weui-uploader__input-box" bindtap="chooseImage" wx:if="{{images.urls.length===0}}"/>
@@ -31,7 +35,7 @@
 
     <view class="user-summary-view">
         <view class="name">{{nickName}}</view>
-        <view class="age-constellation" bindtap="editUserInfo">
+        <view class="age-constellation" bindtap="goEdit">
             <view class="weui-cell__ft">
                 <image class="icon-right" src="../../icon/arrow-right.png"/>
             </view>

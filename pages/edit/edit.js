@@ -29,10 +29,16 @@ Page({
     this.saveImages();
   },
 
-  editUserInfo: function () {
+  goEdit: function () {
     wx.navigateTo({
       url: `../userInfo/userInfo`,
     });
+  },
+
+  goBack: function () {
+    wx.navigateBack({
+      delta: 1
+    })
   },
 
   saveImages: function () {

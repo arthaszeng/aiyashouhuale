@@ -4,7 +4,7 @@
         <view class="title-view">个人资料</view>
         <image bindtap="goEdit" class="edit-icon" mode="aspectFill" src="../../icon/edit.png"/>
     </view>
-    <swiper autoplay="false" class="swiper-view" indicator-dots="True" lower-threshold="50">
+    <swiper class="swiper-view" indicator-dots="True" lower-threshold="50">
         <swiper-item class="swiper-item" wx:for="{{images.urls}}" wx:key="">
             <image bindtap="previewImage" class="swiper-image" id="{{index}}" mode="aspectFill" src="{{item}}"/>
         </swiper-item>
@@ -12,7 +12,7 @@
 
     <view class="user-summary-view">
         <view class="name">{{nickName}}</view>
-        <view class="age-constellation" bindtap="editUserInfo">
+        <view class="age-constellation" bindtap="goEdit">
             <view class="weui-cell__ft">
                 <image class="icon-right" src="../../icon/arrow-right.png"/>
             </view>
