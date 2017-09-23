@@ -1,12 +1,21 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/edit/edit",
-    "pages/profile/profile"
-  ],
+  "debug": true, 
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#FED440",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white", 
+    "navigationBarBackgroundColor": "#000000", 
+    "navigationBarTitleText": "UI demo", 
+    "backgroundColor": "#b8b8b8", 
+    "enablePullDownRefresh": false, 
+    "backgroundTextStyle": "dark"
+  }, 
+  "pages": [
+    "page/index/index", 
+    "page/list/list"
+  ], 
+  "networkTimeout": {
+    "connectSocket": "", 
+    "request": "", 
+    "downloadFile": "", 
+    "uploadFile": ""
   }
 }
