@@ -17,9 +17,6 @@ radio-group{
         display:block;
 }
 
-
-
-
 :before,
 :after ,
 ::before,
@@ -112,7 +109,5 @@ radio-group{
 .wx-text_yD8YLC:active::before{content: ""; width: 10px; height: 30px; display: inline-block; border-top: 2px solid rgb(255, 0, 199); border-bottom: 2px solid rgb(255, 0, 199); border-left: 2px solid rgb(255, 0, 199); position: relative; top: 8px; left: 0px; transform: rotate(0deg) scale(1) translate(0%,0%); transition: All 1s ease; -ms-transform: rotate(0deg) scale(1) translate(0%,0%); -o-transform: rotate(0deg) scale(1) translate(0%,0%); -moz-transform: rotate(0deg) scale(1) translate(0%,0%); -webkit-transform: rotate(0deg) scale(1) translate(0%,0%); -ms-transition: All 1s ease; -o-transition: All 1s ease; -moz-transition: All 1s ease; -webkit-transition: All 1s ease; }
 .wx-icon_CBqfbD:active::before{border-color: rgb(128, 128, 128); border-width: 1px; transform: rotate(0deg) scale(1) translate(0%,0%); transition: All 1s ease; -ms-transform: rotate(0deg) scale(1) translate(0%,0%); -o-transform: rotate(0deg) scale(1) translate(0%,0%); -moz-transform: rotate(0deg) scale(1) translate(0%,0%); -webkit-transform: rotate(0deg) scale(1) translate(0%,0%); -ms-transition: All 1s ease; -o-transition: All 1s ease; -moz-transition: All 1s ease; -webkit-transition: All 1s ease;}
 .wx-icon_CBqfbD:active{transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 1s ease; }
-
-
 
 
