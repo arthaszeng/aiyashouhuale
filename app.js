@@ -1,4 +1,4 @@
-const AV = require('./utils/av-weapp-min.js');
+const AV = require('./libs/av-weapp-min.js');
 
 AV.init({
   appId: 'WWfarQ5WJWyBODyeS3YdWoce-gzGzoHsz',
