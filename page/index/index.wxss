@@ -1,3 +1,5 @@
-page { 
-    position: relative; z-index: 10; overflow: hidden;  
+page {
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
 }
