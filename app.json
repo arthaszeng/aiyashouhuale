@@ -10,8 +10,9 @@
   }, 
   "pages": [
     "page/index/index", 
-    "page/list/list"
-  ], 
+    "page/list/list",
+    "page/about/about"
+  ],
   "networkTimeout": {
     "connectSocket": "", 
     "request": "", 

@@ -10,5 +10,11 @@ Page({
 
   onShow() {
   },
+
+  goAbout() {
+    wx.navigateTo({
+      url: '../about/about',
+    });
+  }
 });
 
