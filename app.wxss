@@ -72,8 +72,15 @@ radio-group {
 }
 
 .wx-scroll-view_PmrL5K {
+    display: inline;
     height: 100%;
     text-align: center;
+    padding-top: 49px;
+}
+
+.about-bottom {
+    height: 100%;
+    width: 100%;
     padding-top: 49px;
 }
 
@@ -139,8 +146,7 @@ radio-group {
     align-items: center;
 }
 .bg-map {
-    height: 50%;
-    padding: 56rpx 0rpx 20rpx 0rpx;
+    padding: 56rpx 3% 20rpx 3%;
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
@@ -204,6 +210,7 @@ radio-group {
     border-bottom: 4rpx;
     border-bottom-style: dashed;
     border-color: #d2d2d2;
+    padding-top: 100rpx;
 
 }
 
@@ -291,7 +298,7 @@ radio-group {
     background-color: rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
-    height: 50px;
+    height: 30px;
     align-items: center;
     padding-left: 37.5rpx;
 }

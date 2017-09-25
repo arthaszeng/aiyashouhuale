@@ -1,4 +1,4 @@
-<view class="c-minheight wx-view_RUFx1n">
+<view class="c-minheight wx-view_RUFx1n" style="height:100%; width:100%；over-flow">
     <view class="wx-view_IfJZkK2">
         <view class="wx-view_u7aIQl">
             <view class="wx-view_3ggkNG">
@@ -29,8 +29,7 @@
         </view>
     </view>
 
-    <scroll-view class="wx-scroll-view_PmrL5K" lower-threshold="50" scroll-y="True"
-                 style="overflow-x: hidden; overflow-y: auto;" upper-threshold="50">
+    <view class="wx-scroll-view_PmrL5K" lower-threshold="50" scroll-y="true">
         <view class="c-minheight logo">
             <image class="top" style="top:0rpx" mode="aspectFill" src="../../images/logo.jpeg"/>
             <view class="about-us" hover-class="navigator-hover" bindtap="goIndex">
@@ -64,20 +63,20 @@
             <image class="wx-image_jfWp5t" mode="aspectFill" src="../../images/background_3.jpeg"
                    style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
         </view>
-        <view class="bg-map">
-            <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" iconPath="/images/location.png" markers="{{markers}}"
-                 show-location="true" style="width: 100%; height: 100%;"/>
+    </view>
+    <view class="bg-map">
+        <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" iconPath="/images/location.png" markers="{{markers}}"
+             show-location="true" style="width: 100%; height: 380rpx;"/>
+    </view>
+    <view class="wx-view_heG5MD">
+        <text class="c-block wx-text_IvYWrJ">© 2017 成都半永久皮肤管理</text>
+        <view class="wx-view_BkVErl">
+            <navigator class="wx-navigator_ghtWwU" hover-class="navigator-hover">
+                <text class="c-block wx-text_fmMFdc">Full Site</text>
+            </navigator>
+            <navigator class="wx-navigator_ghtWwU" hover-class="navigator-hover">
+                <text class="c-block wx-text_fmMFdc">Privacy Policy</text>
+            </navigator>
         </view>
-        <view class="wx-view_heG5MD">
-            <text class="c-block wx-text_IvYWrJ">© 2017 成都半永久皮肤管理</text>
-            <view class="wx-view_BkVErl">
-                <navigator class="wx-navigator_ghtWwU" hover-class="navigator-hover">
-                    <text class="c-block wx-text_fmMFdc">Full Site</text>
-                </navigator>
-                <navigator class="wx-navigator_ghtWwU" hover-class="navigator-hover">
-                    <text class="c-block wx-text_fmMFdc">Privacy Policy</text>
-                </navigator>
-            </view>
-        </view>
-    </scroll-view>
+    </view>
 </view>

@@ -97,13 +97,13 @@
             </navigator>
         </view>
         <view class="wx-view_WjSmLp2" >
-            <text class="c-block wx-text_wkZUUT" >SHOP BRANDS</text>
+            <!--<text class="c-block wx-text_wkZUUT" >SHOP BRANDS</text>-->
             <navigator class="wx-navigator_csHYE3" hover-class="navigator-hover">
                 <image class="wx-image_jfWp5t2" mode="top"
                        src="http://qty83k.creatby.com/materials/origin/f98750caf07e68dbcb96d406269eb836_origin.jpg"
                        style="background-size: auto; background-position: center top; background-repeat: no-repeat; "/>
-                <text class="c-block wx-text_wkZUUT" >RECLAIMED VINTAGE</text>
-                <text class="c-block wx-text_9DrpXU" >Grunge girls, rejoice</text>
+                <text class="c-block wx-text_wkZUUT" >JOIN US</text>
+                <text class="c-block wx-text_9DrpXU" >Growing up with us!</text>
             </navigator>
         </view>
         <view class="wx-view_heG5MD" >
