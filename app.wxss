@@ -104,8 +104,8 @@ radio-group {
 }
 
 .wx-image_gr9dEA {
-    width: 80px;
-    height: 20px;
+    width: 280rpx;
+    height: 90rpx;
 }
 
 .wx-image_SC1alK2 {
@@ -124,7 +124,7 @@ radio-group {
     position: fixed;
     z-index: 100;
     top: 0px;
-    background-color: rgba(255, 255, 255, 0.960784);
+    background-color: rgba(255, 255, 255, 1);
     width: 100%;
     flex-wrap: wrap;
 }
