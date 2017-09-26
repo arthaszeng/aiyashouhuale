@@ -10,18 +10,15 @@
     </view>
     <scroll-view class="wx-scroll-view_PmrL5K" lower-threshold="50" scroll-y="True"
                  style="overflow-x: hidden; overflow-y: auto;" upper-threshold="50">
-        <view class="c-minheight logo" bindtap="goAbout">
-            <image class="top" style="top:0rpx" mode="aspectFill" src="../../images/logo.jpeg"/>
-        </view>
+        <!--<view class="c-minheight logo" bindtap="goAbout">-->
+            <!--<image class="top" style="top:0rpx" mode="aspectFill" src="../../images/logo.jpeg"/>-->
+        <!--</view>-->
         <view class="top-view">
             <!--<view class="wx-navigator_twnbkw" hover-class="navigator-hover" bindtap="goAbout">-->
                 <!--<text class="c-block wx-text_ew47fd">关 于 我 们</text>-->
             <!--</view>-->
-            <view class="discount">
-                <text class="discount-text">微信专属折扣</text>
-            </view>
+            <view class="discount"/>
             <view class="about-us">
-
             </view>
         </view>
         <view class="wx-view_c3y71b">

@@ -223,20 +223,23 @@ radio-group {
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
-    padding-top:80rpx;
+    padding-top:6%;
 }
 
 .discount {
     width: 100%;
-    height: 200rpx;
-    background-color: #0BB20C;
-    background-image: url("/images/face.jpeg");
+    height: 260rpx;
+    background-image: url("http://ac-uzd1umfo.clouddn.com/d6dac997f97cdc3e986f.jpeg");
+    background-position: center;
+    background-size: cover;
 }
 
 .about-us {
     width: 100%;
-    height: 200rpx;
-    background-color: #b2444f;
+    height: 260rpx;
+    background-image: url("http://ac-uzd1umfo.clouddn.com/6d74ee996a51a340666a.jpeg");
+    background-position: center;
+    background-size: cover;
 }
 
 .top {
