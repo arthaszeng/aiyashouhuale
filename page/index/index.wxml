@@ -12,24 +12,20 @@
                  style="overflow-x: hidden; overflow-y: auto;" upper-threshold="50">
         <view class="c-minheight logo" bindtap="goAbout">
             <image class="top" style="top:0rpx" mode="aspectFill" src="../../images/logo.jpeg"/>
-            <view class="about-us" hover-class="navigator-hover" bindtap="goAbout">
-                <text class="c-block wx-text_ew47fd">关 于 我 们</text>
-            </view>
         </view>
-        <view class="wx-view_WjSmLp2">
-            <navigator class="wx-navigator_csHYE2" hover-class="navigator-hover" url="../list/list">
-                <image class="wx-image_jfWp5t" mode="aspectFill"
-                       src="http://ac-wwfarq5w.clouddn.com/6f3c6d062cb5665f2149.jpeg"
-                />
-            </navigator>
-            <text class="c-block wx-text_VwMJai">WANT A TATTOO ?</text>
-            <text class="c-block wx-text_yCrHg6">"纹身如人生，要做就做自己。"</text>
-            <view class="wx-navigator_twnbkw" hover-class="navigator-hover" bindtap="goAbout">
-                <text class="c-block wx-text_ew47fd">纹身预约</text>
+        <view class="top-view">
+            <!--<view class="wx-navigator_twnbkw" hover-class="navigator-hover" bindtap="goAbout">-->
+                <!--<text class="c-block wx-text_ew47fd">关 于 我 们</text>-->
+            <!--</view>-->
+            <view class="discount">
+                <text class="discount-text">微信专属折扣</text>
+            </view>
+            <view class="about-us">
+
             </view>
         </view>
         <view class="wx-view_c3y71b">
-            <text class="c-block wx-text_VwMJai">皮肤护理</text>
+            <!--<text class="c-block wx-text_VwMJai">皮肤护理</text>-->
             <scroll-view class="c-minheight wx-scroll-view_vN6ObB" lower-threshold="50" scroll-x="True"
                          style="overflow-x: auto; overflow-y: hidden; " upper-threshold="50">
                 <view class="wx-view_CJITSi">
@@ -59,6 +55,16 @@
                     </view>
                 </view>
             </scroll-view>
+        </view>
+        <view class="wx-view_WjSmLp2">
+            <navigator class="wx-navigator_csHYE2" hover-class="navigator-hover" url="../list/list">
+                <image class="wx-image_jfWp5t" mode="aspectFill" src="http://ac-wwfarq5w.clouddn.com/6f3c6d062cb5665f2149.jpeg"/>
+            </navigator>
+            <text class="c-block wx-text_VwMJai">WANT A TATTOO ?</text>
+            <text class="c-block wx-text_yCrHg6">"纹身如人生，要做就做自己。"</text>
+            <view class="wx-navigator_twnbkw" hover-class="navigator-hover">
+                <text class="c-block wx-text_ew47fd">纹身预约</text>
+            </view>
         </view>
         <view class="wx-view_WjSmLp2">
             <navigator class="wx-navigator_csHYE2" hover-class="navigator-hover">

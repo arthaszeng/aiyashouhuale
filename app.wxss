@@ -215,27 +215,28 @@ radio-group {
     border-bottom-style: dashed;
     border-color: #d2d2d2;
     padding-top: 100rpx;
-    height: 400rpx;
+    height: 330rpx;
 }
 
+.top-view {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top:80rpx;
+}
+
+.discount {
+    width: 100%;
+    height: 200rpx;
+    background-color: #0BB20C;
+    background-image: url("/images/face.jpeg");
+}
 
 .about-us {
-    width: 350rpx;
-    height: 60rpx;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #4a4a4a;
-    color: #4b4b4b;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-top: 10rpx;
-    margin-bottom: 20rpx;
-    font-family: Helvetica;
-    font-size: 30rpx;
+    width: 100%;
+    height: 200rpx;
+    background-color: #b2444f;
 }
 
 .top {
