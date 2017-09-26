@@ -1,36 +1,16 @@
 <view class="c-minheight wx-view_RUFx1n" style="height:100%; width:100%；over-flow">
-    <view class="wx-view_IfJZkK2">
-        <view class="wx-view_u7aIQl">
-            <view class="wx-view_3ggkNG">
-                <image class="wx-image_SC1alK2" mode="aspectFill"
-                       src="http://qty83k.creatby.com/materials/origin/4581f4f9cdbcc6eea8f954950162b522_origin.png"
-                       style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
-            </view>
-            <view class="wx-view_3ggkNG">
-                <image class="wx-image_SC1alK2" mode="aspectFill"
-                       src="http://qty83k.creatby.com/materials/origin/da241a1902e1fc54c46cc685f40e4e8c_origin.png"
-                       style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
-            </view>
+    <view class="navigator-view">
+        <view class="navigator-left">
+            <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/return.png"/>
         </view>
-        <image class="wx-image_gr9dEA" mode="aspectFit"
-               src="/images/waterlily.jpeg"
-               style="background-size: contain; background-position: center center; background-repeat: no-repeat; "/>
-        <view class="wx-view_u7aIQl">
-            <view class="wx-view_3ggkNG">
-                <image class="wx-image_SC1alK2" mode="aspectFill"
-                       src="http://qty83k.creatby.com/materials/origin/82caa2c0c239ddd676b4f0292c959fcb_origin.png"
-                       style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
-            </view>
-            <view class="wx-view_3ggkNG">
-                <image class="wx-image_SC1alK2" mode="aspectFill"
-                       src="http://qty83k.creatby.com/materials/origin/dea895fd53355240501123c0e37bbb3d_origin.png"
-                       style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
-            </view>
+        <image class="logo-image" mode="aspectFit" src="/images/waterlily.jpeg"/>
+        <view class="navigator-right">
+            <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/cart.png"/>
         </view>
     </view>
 
     <view class="wx-scroll-view_PmrL5K" lower-threshold="50" scroll-y="true">
-        <view class="c-minheight logo">
+        <view class="c-minheight logo" bindtap="goIndex">
             <image class="top" style="top:0rpx" mode="aspectFill" src="../../images/logo.jpeg"/>
             <view class="about-us" hover-class="navigator-hover" bindtap="goIndex">
                 <text class="c-block wx-text_ew47fd">关 于 我 们</text>
@@ -49,19 +29,19 @@
         <view class="bg-picture">
             <image class="wx-image_jfWp5t" mode="aspectFill"
                    src="../../images/cup.jpeg"
-                   style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
+            />
         </view>
         <view class="bg-picture">
             <image class="wx-image_jfWp5t" mode="aspectFill" src="../../images/background_1.jpeg"
-                   style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
+            />
         </view>
         <view class="bg-picture">
             <image class="wx-image_jfWp5t" mode="aspectFill" src="../../images/background_2.jpeg"
-                   style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
+            />
         </view>
         <view class="bg-picture">
             <image class="wx-image_jfWp5t" mode="aspectFill" src="../../images/background_3.jpeg"
-                   style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
+            />
         </view>
     </view>
     <view class="bg-map">

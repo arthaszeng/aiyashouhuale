@@ -29,9 +29,9 @@ Page({
   },
 
   goIndex() {
-    wx.navigateBack({
-      delta: 1
-    })
+    wx.redirectTo({
+      url: '../index/index',
+    });
   }
 });
 

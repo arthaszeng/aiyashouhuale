@@ -1,119 +1,97 @@
-<view class="c-minheight wx-view_RUFx1n" >
-    <view class="wx-view_IfJZkK2" >
-        <view class="wx-view_u7aIQl" >
-            <view class="wx-view_3ggkNG" >
-                <image class="wx-image_SC1alK2" mode="aspectFill"
-                       src="http://qty83k.creatby.com/materials/origin/4581f4f9cdbcc6eea8f954950162b522_origin.png"
-                       style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
-            </view>
-            <view class="wx-view_3ggkNG" >
-                <image class="wx-image_SC1alK2" mode="aspectFill"
-                       src="http://qty83k.creatby.com/materials/origin/da241a1902e1fc54c46cc685f40e4e8c_origin.png"
-                       style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
-            </view>
+<view class="c-minheight wx-view_RUFx1n">
+    <view class="navigator-view">
+        <view class="navigator-left">
+            <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/return.png"/>
         </view>
-        <image class="wx-image_gr9dEA" mode="aspectFit"
-               src="/images/waterlily.jpeg"
-               style="background-size: contain; background-position: center center; background-repeat: no-repeat; "/>
-        <view class="wx-view_u7aIQl" >
-            <view class="wx-view_3ggkNG" >
-                <image class="wx-image_SC1alK2" mode="aspectFill"
-                       src="http://qty83k.creatby.com/materials/origin/82caa2c0c239ddd676b4f0292c959fcb_origin.png"
-                       style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
-            </view>
-            <view class="wx-view_3ggkNG" >
-                <image class="wx-image_SC1alK2" mode="aspectFill"
-                       src="http://qty83k.creatby.com/materials/origin/dea895fd53355240501123c0e37bbb3d_origin.png"
-                       style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
-            </view>
+        <image class="logo-image" mode="aspectFit" src="/images/waterlily.jpeg"/>
+        <view class="navigator-right">
+            <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/cart.png"/>
         </view>
     </view>
-
-
     <scroll-view class="wx-scroll-view_PmrL5K" lower-threshold="50" scroll-y="True"
                  style="overflow-x: hidden; overflow-y: auto;" upper-threshold="50">
-        <view class="c-minheight logo" >
+        <view class="c-minheight logo" bindtap="goAbout">
             <image class="top" style="top:0rpx" mode="aspectFill" src="../../images/logo.jpeg"/>
-            <navigator class="about-us" hover-class="navigator-hover" url="../about/about">
-                <text class="c-block wx-text_ew47fd" >关 于 我 们</text>
-            </navigator>
+            <view class="about-us" hover-class="navigator-hover" bindtap="goAbout">
+                <text class="c-block wx-text_ew47fd">关 于 我 们</text>
+            </view>
         </view>
-        <view class="wx-view_WjSmLp2" >
+        <view class="wx-view_WjSmLp2">
             <navigator class="wx-navigator_csHYE2" hover-class="navigator-hover" url="../list/list">
                 <image class="wx-image_jfWp5t" mode="aspectFill"
                        src="http://ac-wwfarq5w.clouddn.com/6f3c6d062cb5665f2149.jpeg"
-                       style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
+                />
             </navigator>
-            <text class="c-block wx-text_VwMJai" >WANT A TATTOO ?</text>
-            <text class="c-block wx-text_yCrHg6" >"纹身如人生，要做就做自己。"</text>
+            <text class="c-block wx-text_VwMJai">WANT A TATTOO ?</text>
+            <text class="c-block wx-text_yCrHg6">"纹身如人生，要做就做自己。"</text>
             <view class="wx-navigator_twnbkw" hover-class="navigator-hover" bindtap="goAbout">
-                <text class="c-block wx-text_ew47fd" >纹身预约</text>
+                <text class="c-block wx-text_ew47fd">纹身预约</text>
             </view>
         </view>
-        <view class="wx-view_c3y71b" >
-            <text class="c-block wx-text_VwMJai" >皮肤护理</text>
+        <view class="wx-view_c3y71b">
+            <text class="c-block wx-text_VwMJai">皮肤护理</text>
             <scroll-view class="c-minheight wx-scroll-view_vN6ObB" lower-threshold="50" scroll-x="True"
                          style="overflow-x: auto; overflow-y: hidden; " upper-threshold="50">
-                <view class="wx-view_CJITSi" >
-                    <view class="c-minheight wx-view_HBPWHD" >
+                <view class="wx-view_CJITSi">
+                    <view class="c-minheight wx-view_HBPWHD">
                         <image class="wx-image_WKcTHu" mode="aspectFill"
                                src="../../images/gold.jpg"
-                               style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
-                        <text class="c-block c-ellipse wx-text_yCrHg62" >黄金美肤</text>
+                        />
+                        <text class="c-block c-ellipse wx-text_yCrHg62">黄金美肤</text>
                     </view>
-                    <view class="c-minheight wx-view_HBPWHD" >
+                    <view class="c-minheight wx-view_HBPWHD">
                         <image class="wx-image_WKcTHu" mode="aspectFill"
                                src="../../images/brow.jpg"
-                               style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
-                        <text class="c-block wx-text_yCrHg62" >眉飞色舞</text>
+                        />
+                        <text class="c-block wx-text_yCrHg62">眉飞色舞</text>
                     </view>
-                    <view class="c-minheight wx-view_HBPWHD" >
+                    <view class="c-minheight wx-view_HBPWHD">
                         <image class="wx-image_WKcTHu" mode="aspectFill"
                                src="../../images/face.jpeg"
-                               style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
-                        <text class="c-block c-ellipse wx-text_yCrHg62" >面部护理</text>
+                        />
+                        <text class="c-block c-ellipse wx-text_yCrHg62">面部护理</text>
                     </view>
-                    <view class="c-minheight wx-view_HBPWHD" >
+                    <view class="c-minheight wx-view_HBPWHD">
                         <image class="wx-image_WKcTHu" mode="aspectFill"
                                src="../../images/lip.jpg"
-                               style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
-                        <text class="c-block c-ellipse wx-text_yCrHg62" >唇唇欲动</text>
+                        />
+                        <text class="c-block c-ellipse wx-text_yCrHg62">唇唇欲动</text>
                     </view>
                 </view>
             </scroll-view>
         </view>
-        <view class="wx-view_WjSmLp2" >
+        <view class="wx-view_WjSmLp2">
             <navigator class="wx-navigator_csHYE2" hover-class="navigator-hover">
                 <image class="wx-image_jfWp5t" mode="aspectFill"
                        src="http://qty83k.creatby.com/materials/origin/1c078260684b9b4526a0cf45521806ad_origin.jpg"
-                       style="background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
+                />
             </navigator>
-            <text class="c-block wx-text_VwMJai" >COSMETIC
+            <text class="c-block wx-text_VwMJai">COSMETIC
                 COUNTDOWN
             </text>
-            <text class="c-block wx-text_yCrHg6" >Gift them the ASOS beauty advent calendar</text>
+            <text class="c-block wx-text_yCrHg6">Gift them the ASOS beauty advent calendar</text>
             <navigator class="wx-navigator_twnbkw" hover-class="navigator-hover">
-                <text class="c-block wx-text_ew47fd" >SHOP NOW</text>
+                <text class="c-block wx-text_ew47fd">SHOP NOW</text>
             </navigator>
         </view>
-        <view class="wx-view_WjSmLp2" >
+        <view class="wx-view_WjSmLp2">
             <!--<text class="c-block wx-text_wkZUUT" >SHOP BRANDS</text>-->
             <navigator class="wx-navigator_csHYE3" hover-class="navigator-hover">
                 <image class="wx-image_jfWp5t2" mode="top"
                        src="http://qty83k.creatby.com/materials/origin/f98750caf07e68dbcb96d406269eb836_origin.jpg"
                        style="background-size: auto; background-position: center top; background-repeat: no-repeat; "/>
-                <text class="c-block wx-text_wkZUUT" >JOIN US</text>
-                <text class="c-block wx-text_9DrpXU" >Growing up with us!</text>
+                <text class="c-block wx-text_wkZUUT">JOIN US</text>
+                <text class="c-block wx-text_9DrpXU">Growing up with us!</text>
             </navigator>
         </view>
-        <view class="wx-view_heG5MD" >
-            <text class="c-block wx-text_IvYWrJ" >© 2017 成都半永久皮肤管理</text>
-            <view class="wx-view_BkVErl" >
+        <view class="wx-view_heG5MD">
+            <text class="c-block wx-text_IvYWrJ">© 2017 成都半永久皮肤管理</text>
+            <view class="wx-view_BkVErl">
                 <navigator class="wx-navigator_ghtWwU" hover-class="navigator-hover">
-                    <text class="c-block wx-text_fmMFdc" >Full Site</text>
+                    <text class="c-block wx-text_fmMFdc">Full Site</text>
                 </navigator>
                 <navigator class="wx-navigator_ghtWwU" hover-class="navigator-hover">
-                    <text class="c-block wx-text_fmMFdc" >Privacy Policy</text>
+                    <text class="c-block wx-text_fmMFdc">Privacy Policy</text>
                 </navigator>
             </view>
         </view>

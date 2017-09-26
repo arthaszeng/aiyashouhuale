@@ -12,7 +12,7 @@ Page({
   },
 
   goAbout() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../about/about',
     });
   }

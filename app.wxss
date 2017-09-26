@@ -84,14 +84,17 @@ radio-group {
     padding-top: 49px;
 }
 
-.wx-view_u7aIQl {
-    display: flex;
-}
-
-.wx-view_3ggkNG {
+.navigator-right {
     display: flex;
     text-align: left;
     justify-content: center;
+    margin-right: 3%;
+}
+.navigator-left {
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    margin-left: 3%;
 }
 
 .wx-image_jfWp5t {
@@ -103,19 +106,19 @@ radio-group {
     height: 100%;
 }
 
-.wx-image_gr9dEA {
-    width: 280rpx;
-    height: 90rpx;
+.logo-image {
+    width: 200rpx;
+    height: 100rpx;
 }
 
 .wx-image_SC1alK2 {
-    width: 36px;
-    height: 36px;
+    width: 50rpx;
+    height: 50rpx;
     border-radius: 50px;
     flex: 0 0 auto;
 }
 
-.wx-view_IfJZkK2 {
+.navigator-view {
     display: flex;
     padding: 11.25rpx 18.75rpx;
     justify-content: space-between;
@@ -127,6 +130,7 @@ radio-group {
     background-color: rgba(255, 255, 255, 1);
     width: 100%;
     flex-wrap: wrap;
+    height: 6%;
 }
 
 .wx-view_WjSmLp2 {
@@ -211,32 +215,34 @@ radio-group {
     border-bottom-style: dashed;
     border-color: #d2d2d2;
     padding-top: 100rpx;
-
+    height: 400rpx;
 }
 
 
 .about-us {
-    width: 248px;
+    width: 350rpx;
+    height: 60rpx;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     border-width: 3px;
     border-style: solid;
-    border-color: #f2f2f2;
-    color: #eeeeee;
-    min-height: 38px;
+    border-color: #4a4a4a;
+    color: #4b4b4b;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-top: 30rpx;
-    margin-bottom: 50rpx;
+    margin-top: 10rpx;
+    margin-bottom: 20rpx;
+    font-family: Helvetica;
+    font-size: 30rpx;
 }
 
 .top {
     width: 100%;
     height: 200rpx;
-    background-position:50% 50%;
     background-size:cover;
+    opacity:0.2
 }
 
 .wx-scroll-view_vN6ObB {
@@ -360,10 +366,10 @@ radio-group {
     color: #575757;
 }
 
-.wx-scroll-view_PmrL5K2 {
+.shop-scoll-view {
     height: 100%;
     text-align: center;
-    padding-top: 83px;
+    padding-top: 83rpx;
 }
 
 .wx-view_UeEarn {
@@ -384,9 +390,9 @@ radio-group {
     align-items: center;
 }
 
-.wx-image_Rn6Am6 {
-    width: 30px;
-    height: 30px;
+.add-cart-image {
+    width: 35rpx;
+    height: 35rpx;
     display: block;
 }
 
