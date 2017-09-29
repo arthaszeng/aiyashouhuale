@@ -1,6 +1,6 @@
 <view class="c-minheight wx-view_RUFx1n">
     <view class="navigator-view">
-        <view class="navigator-left">
+        <view class="navigator-left" bindtap="goIndex">
             <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/return.png"/>
         </view>
         <image class="logo-image" mode="aspectFit" src="/images/waterlily.jpeg"/>

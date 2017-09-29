@@ -1,6 +1,6 @@
 <view class="c-minheight wx-view_RUFx1n" style="height:100%; width:100%；over-flow">
     <view class="navigator-view">
-        <view class="navigator-left">
+        <view class="navigator-left" bindtap="goIndex">
             <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/return.png"/>
         </view>
         <image class="logo-image" mode="aspectFit" src="/images/waterlily.jpeg"/>
@@ -11,8 +11,8 @@
 
     <view class="wx-scroll-view_PmrL5K" lower-threshold="50" scroll-y="true">
         <view class="c-minheight logo" bindtap="goIndex">
-            <image class="top" style="top:0rpx" mode="aspectFill" src="../../images/logo.jpeg"/>
-            <view class="about-us" hover-class="navigator-hover" bindtap="goIndex">
+            <image class="top" mode="aspectFill" src="../../images/logo.jpeg"/>
+            <view class="about-us" bindtap="goIndex">
                 <text class="c-block wx-text_ew47fd">关 于 我 们</text>
             </view>
         </view>

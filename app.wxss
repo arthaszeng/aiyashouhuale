@@ -91,6 +91,7 @@ radio-group {
     margin-right: 3%;
 }
 .navigator-left {
+    width: 50rpx;
     display: flex;
     text-align: left;
     justify-content: center;
@@ -114,7 +115,6 @@ radio-group {
 .wx-image_SC1alK2 {
     width: 50rpx;
     height: 50rpx;
-    border-radius: 50px;
     flex: 0 0 auto;
 }
 
@@ -223,7 +223,7 @@ radio-group {
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
-    padding-top:6%;
+    padding-top: 6%;
 }
 
 .discount {

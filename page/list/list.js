@@ -7,5 +7,10 @@ Page({
   },
   onShow() {
   },
+  goIndex() {
+    wx.navigateTo({
+      url: '../index/index',
+    });
+  }
 });
 
