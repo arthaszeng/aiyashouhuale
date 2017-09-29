@@ -21,6 +21,12 @@ Page({
     wx.navigateTo({
       url: '../feature/feature',
     });
+  },
+
+  goAdmin: function () {
+    wx.navigateTo({
+      url: '../admin/admin',
+    });
   }
 });
 

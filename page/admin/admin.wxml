@@ -1,0 +1,3 @@
+<view >
+    <button class="goAdd">Add one</button>
+</view>

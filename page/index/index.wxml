@@ -51,5 +51,6 @@
                 </navigator>
             </view>
         </view>
+        <button class="go-admin" bindtap="goAdmin">go admin</button>
     </scroll-view>
 </view>

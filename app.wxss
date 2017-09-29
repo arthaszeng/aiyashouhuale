@@ -520,3 +520,7 @@ radio-group {
 }
 
 
+.go-admin {
+    width: 100%;
+height: 30rxp;
+}
