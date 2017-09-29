@@ -9,13 +9,13 @@
     "backgroundTextStyle": "dark"
   }, 
   "pages": [
-    "page/index/index", 
-    "page/list/list",
-    "page/about/about",
-    "page/feature/feature",
-    "page/detail/detail",
-    "page/admin/admin",
-    "page/edit/edit"
+    "pages/index/index", 
+    "pages/list/list",
+    "pages/about/about",
+    "pages/feature/feature",
+    "pages/detail/detail",
+    "pages/admin/admin",
+    "pages/edit/edit"
   ],
   "networkTimeout": {
     "connectSocket": "", 

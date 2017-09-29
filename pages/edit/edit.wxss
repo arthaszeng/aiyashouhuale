@@ -39,6 +39,7 @@
 }
 
 .image-container {
+    height: 60%;
     margin: 10rpx;
     display: flex;
     flex-direction: column;

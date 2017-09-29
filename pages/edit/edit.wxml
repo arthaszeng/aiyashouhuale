@@ -3,7 +3,7 @@
         <image bindtap="goBack" class="menu-icon" mode="aspectFit" src="../../icon/back.png"/>
         <view class="title-view">编辑我的信息</view>
     </view>
-    <view class="image-container" style="height:{{width}}px;width:{{width}}">
+    <view class="image-container">
         <view class="line-1">
             <view class="image-1 weui-uploader__input-box" bindtap="chooseImage" wx:if="{{images.urls.length===0}}"/>
             <image class="weui-uploader__img image-1" src="{{images.urls[0]}}" bindtap="imageAction" mode="aspectFill" wx:else="{{images.urls.length===0}}" id="0"/>
