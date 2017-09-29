@@ -1,5 +1,5 @@
-const AV = require('../../utils/av-weapp-min.js');
-const common = require('../../utils/common');
+const AV = require('../../libs/av-weapp-min.js');
+const common = require('../../utils/common.js');
 const app = getApp();
 
 Page({
