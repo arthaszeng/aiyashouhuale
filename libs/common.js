@@ -1,5 +1,5 @@
-const AV = require('../libs/av-weapp-min.js');
-const dataFormater = require('../libs/dateformater.js');
+const AV = require('./av-weapp-min.js');
+const dataFormater = require('./dateformater.js');
 
 function registerRole(roleName) {
   const roleQuery = new AV.Query(AV.Role);
@@ -308,6 +308,28 @@ function redirectToHint (hintType) {
   });
 }
 
+
+
+
+function removeItemByValue(arr, targetItem) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === targetItem) {
+      arr.splice(i, 1);
+      break;
+    }
+  }
+}
+
+function arrContain(arr, targetItem) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === targetItem) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+
 module.exports = {
   validateCodeId,
   getCAGMapsByCommodity,
@@ -343,5 +365,8 @@ module.exports = {
   fetchUsersByGroup,
   isEmptyObject,
   getToday,
-  redirectToHint
+  redirectToHint,
+
+  removeItemByValue,
+  arrContain
 };
