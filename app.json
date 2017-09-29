@@ -1,17 +1,19 @@
 {
   "debug": true, 
   "window": {
-    "navigationBarTextStyle": "white", 
-    "navigationBarBackgroundColor": "#000000", 
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "成都半永久皮肤管理",
-    "backgroundColor": "#b8b8b8", 
-    "enablePullDownRefresh": false, 
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": false,
     "backgroundTextStyle": "dark"
   }, 
   "pages": [
     "page/index/index", 
     "page/list/list",
-    "page/about/about"
+    "page/about/about",
+    "page/feature/feature",
+    "page/detail/detail"
   ],
   "networkTimeout": {
     "connectSocket": "", 

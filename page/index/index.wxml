@@ -12,74 +12,34 @@
                  style="overflow-x: hidden; overflow-y: auto;" upper-threshold="50">
         <view class="top-view">
             <view class="discount"/>
-            <view class="about-us" bindtap="goAbout">
-            </view>
+            <view class="about-us" bindtap="goAbout"/>
         </view>
         <view class="wx-view_c3y71b">
-            <!--<text class="c-block wx-text_VwMJai">皮肤护理</text>-->
             <scroll-view class="c-minheight wx-scroll-view_vN6ObB" lower-threshold="50" scroll-x="True"
                          style="overflow-x: auto; overflow-y: hidden; " upper-threshold="50">
                 <view class="wx-view_CJITSi">
-                    <view class="c-minheight wx-view_HBPWHD">
-                        <image class="wx-image_WKcTHu" mode="aspectFill"
-                               src="../../images/gold.jpg"
-                        />
+                    <view class="c-minheight wx-view_HBPWHD" bindtap="goList">
+                        <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/gold.jpg"/>
                         <text class="c-block c-ellipse wx-text_yCrHg62">黄金美肤</text>
                     </view>
                     <view class="c-minheight wx-view_HBPWHD">
-                        <image class="wx-image_WKcTHu" mode="aspectFill"
-                               src="../../images/brow.jpg"
-                        />
+                        <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/brow.jpg"/>
                         <text class="c-block wx-text_yCrHg62">眉飞色舞</text>
                     </view>
                     <view class="c-minheight wx-view_HBPWHD">
-                        <image class="wx-image_WKcTHu" mode="aspectFill"
-                               src="../../images/face.jpeg"
-                        />
+                        <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/face.jpeg"/>
                         <text class="c-block c-ellipse wx-text_yCrHg62">面部护理</text>
                     </view>
                     <view class="c-minheight wx-view_HBPWHD">
-                        <image class="wx-image_WKcTHu" mode="aspectFill"
-                               src="../../images/lip.jpg"
-                        />
+                        <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/lip.jpg"/>
                         <text class="c-block c-ellipse wx-text_yCrHg62">唇唇欲动</text>
                     </view>
                 </view>
             </scroll-view>
         </view>
-        <view class="wx-view_WjSmLp2">
-            <navigator class="wx-navigator_csHYE2" hover-class="navigator-hover" url="../list/list">
-                <image class="wx-image_jfWp5t" mode="aspectFill" src="http://ac-wwfarq5w.clouddn.com/6f3c6d062cb5665f2149.jpeg"/>
-            </navigator>
-            <text class="c-block wx-text_VwMJai">WANT A TATTOO ?</text>
-            <text class="c-block wx-text_yCrHg6">"纹身如人生，要做就做自己。"</text>
-            <view class="wx-navigator_twnbkw" hover-class="navigator-hover">
-                <text class="c-block wx-text_ew47fd">纹身预约</text>
-            </view>
-        </view>
-        <view class="wx-view_WjSmLp2">
-            <navigator class="wx-navigator_csHYE2" hover-class="navigator-hover">
-                <image class="wx-image_jfWp5t" mode="aspectFill"
-                       src="http://qty83k.creatby.com/materials/origin/1c078260684b9b4526a0cf45521806ad_origin.jpg"
-                />
-            </navigator>
-            <text class="c-block wx-text_VwMJai">COSMETIC
-                COUNTDOWN
-            </text>
-            <text class="c-block wx-text_yCrHg6">Gift them the ASOS beauty advent calendar</text>
-            <navigator class="wx-navigator_twnbkw" hover-class="navigator-hover">
-                <text class="c-block wx-text_ew47fd">SHOP NOW</text>
-            </navigator>
-        </view>
-        <view class="wx-view_WjSmLp2">
-            <!--<text class="c-block wx-text_wkZUUT" >SHOP BRANDS</text>-->
-            <navigator class="wx-navigator_csHYE3" hover-class="navigator-hover">
-                <image class="wx-image_jfWp5t2" mode="top"
-                       src="http://qty83k.creatby.com/materials/origin/f98750caf07e68dbcb96d406269eb836_origin.jpg"
-                       style="background-size: auto; background-position: center top; background-repeat: no-repeat; "/>
-                <text class="c-block wx-text_wkZUUT">JOIN US</text>
-                <text class="c-block wx-text_9DrpXU">Growing up with us!</text>
-            </navigator>
+        <view class="bottom-view">
+            <view class="discount"/>
+            <view class="discount"/>
         </view>
         <view class="wx-view_heG5MD">
             <text class="c-block wx-text_IvYWrJ">© 2017 成都半永久皮肤管理</text>
