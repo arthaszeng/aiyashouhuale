@@ -14,7 +14,8 @@
     "page/about/about",
     "page/feature/feature",
     "page/detail/detail",
-    "page/admin/admin"
+    "page/admin/admin",
+    "page/edit/edit"
   ],
   "networkTimeout": {
     "connectSocket": "", 
