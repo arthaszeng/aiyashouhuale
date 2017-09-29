@@ -11,6 +11,12 @@ Page({
     wx.navigateTo({
       url: '../index/index',
     });
-  }
+  },
+
+  goBack() {
+    wx.navigateBack({
+      delta: 1
+    })
+  },
 });
 

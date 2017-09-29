@@ -28,10 +28,10 @@ Page({
   onShow() {
   },
 
-  goIndex() {
-    wx.redirectTo({
-      url: '../index/index',
-    });
-  }
+  goBack() {
+    wx.navigateBack({
+      delta: 1
+    })
+  },
 });
 

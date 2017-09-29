@@ -38,8 +38,7 @@
             </scroll-view>
         </view>
         <view class="bottom-view">
-            <view class="discount"/>
-            <view class="discount"/>
+            <view class="discount" bindtap="goFeature"/>
         </view>
         <view class="wx-view_heG5MD">
             <text class="c-block wx-text_IvYWrJ">© 2017 成都半永久皮肤管理</text>

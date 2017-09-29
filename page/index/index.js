@@ -11,9 +11,15 @@ Page({
   onShow() {
   },
 
-  goAbout() {
-    wx.redirectTo({
+  goAbout: function () {
+    wx.navigateTo({
       url: '../about/about',
+    });
+  },
+
+  goFeature: function () {
+    wx.navigateTo({
+      url: '../feature/feature',
     });
   }
 });

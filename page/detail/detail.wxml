@@ -72,13 +72,13 @@
             <view class="c-minheight wx-view_WnUrtw" >
                 <view class="wx-view_F9ISUC" >
                     <navigator class="wx-navigator_wTcTS2"  hover-class="navigator-hover">
-                        <text class="wx-text_71u3gA" >木芽</text>
+                        <text class="wx-text_71u3gA" >路人甲</text>
                     </navigator>
                     <view class="wx-view_wrkAD7" >
                         <image class="wx-image_YoXk15"  src="http://qty83k.creatby.com/materials/origin/53a095f5786a4f0e1e50eea5ec5c84bc_origin.png"/>
                     </view>
                 </view>
-                <text class="c-block wx-text_kGXxsa" >在植觉买过东西，每一件都是用心之作。很喜欢植觉的调调，不争不抢。今天在这个app上无意中也看到了植觉小物，小确幸顿时溢满心间</text>
+                <text class="c-block wx-text_kGXxsa" >在高阿姨的工作室做过很多次保养，都非常不错，很用心，用的材料也都很好，会经常再来的</text>
                 <view class="comment_operate" >
                     <view class="wx-view_h6iSr9" >
                         <view class="commentlikebtn" >
@@ -88,7 +88,7 @@
                             <image class="wx-image_YoXk15"  src="http://qty83k.creatby.com/materials/origin/0564a45ab780222757935674e13d6919_origin.png"/>
                         </view>
                     </view>
-                    <text class="listitem_creattime" >2016.10.29</text>
+                    <text class="listitem_creattime" >2017.9.29</text>
                 </view>
             </view>
         </view>
@@ -101,11 +101,11 @@
             <view class="c-minheight wx-view_WnUrtw" >
                 <view class="wx-view_F9ISUC" >
                     <navigator class="wx-navigator_wTcTS2"  hover-class="navigator-hover">
-                        <text class="wx-text_71u3gA" >UPUP</text>
+                        <text class="wx-text_71u3gA" >路人乙</text>
                     </navigator>
                     <view class="wx-view_wrkAD7" />
                 </view>
-                <text class="c-block wx-text_kGXxsa" >所以说包装多重要，你普通卖花的能把弹簧草卖到这个价格吗？呵呵……</text>
+                <text class="c-block wx-text_kGXxsa" >I should bought you flowers and held your hand, Sharon</text>
                 <view class="comment_operate" >
                     <view class="wx-view_h6iSr9" >
                         <view class="commentlikebtn" >
@@ -115,7 +115,7 @@
                             <image class="wx-image_YoXk15"  src="http://qty83k.creatby.com/materials/origin/0564a45ab780222757935674e13d6919_origin.png"/>
                         </view>
                     </view>
-                    <text class="listitem_creattime" >2016.10.29</text>
+                    <text class="listitem_creattime" >2016.9.30</text>
                 </view>
             </view>
         </view>

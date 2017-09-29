@@ -36,6 +36,11 @@ Page({
     
   },
 
+  goBack() {
+    wx.navigateBack({
+      delta: 1
+    })
+  },
 
   //以下为自定义点击事件
   

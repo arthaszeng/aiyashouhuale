@@ -1,64 +1,29 @@
 <view>
-    <view class="bottomGrayboder toptab">
-        <view bindtap="tap_d9c62767" class="toptabWrap">
-            <view class="active toptabItem">
-                商品
-            </view>
-            <view class="toptabItem">
-                图文
-            </view>
+    <view class="navigator-view">
+        <view class="navigator-left" bindtap="goBack">
+            <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/return.png"/>
+        </view>
+        <image class="logo-image" mode="aspectFit" src="/images/waterlily.jpeg"/>
+        <view class="navigator-right">
+            <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/cart.png"/>
         </view>
     </view>
     <scroll-view class="c-minheight wx-scroll-view_MBKQjG" lower-threshold="50" scroll-y="True" style="overflow-x: hidden; overflow-y: auto; "
                  upper-threshold="50">
-        <view bindtap="tap_de01fdb6" class="listitemWrap">
-            <view class="image_thumbView">
-                <navigator class="image_thumbView" hover-class="navigator-hover" url="../detail/detail">
-                    <image class="image_thumb" mode="aspectFit" src="http://qty83k.creatby.com/materials/origin/640e31829b8776967dedc670b5427d0f_origin.jpg"/>
-                </navigator>
-            </view>
-            <text class="text_description">小巧可爱的案头雅物。</text>
-            <view class="bottomGrayboder listitemInfoWrap">
-                <view class="likeinfo">
-                    <image class="likebtn" src="http://qty83k.creatby.com/materials/origin/c5656ef00d38d89eae437c5a9102f8fa_origin.png"/>
-                    <text class="c-block likeinfo_count">22</text>
-                </view>
-                <text class="listitem_creattime">2016.10.29</text>
-            </view>
-        </view>
         <view class="listitemWrap">
-            <navigator class="image_thumbView" hover-class="navigator-hover" url="../detail/detail">
-                <image class="image_thumb" mode="aspectFit" src="http://imgcdn.guoku.com/images/310/7118da1020685f6592f4bcadbf3d6aad.jpg"
-                       style="background-image: url(http://imgcdn.guoku.com/images/310/7118da1020685f6592f4bcadbf3d6aad.jpg); background-size: contain; background-position: center center; background-repeat: no-repeat; "/>
-            </navigator>
-            <text class="text_description">可穿戴音响系统， SubPac M2 穿起来就像一个背包，前面配有可调节肩带，可以把低音震动贴近背部。既能通过触觉震动膜释放强大的沉浸式低音震动，又能对外界保持安静，不会打扰到附近的人。</text>
-            <view class="bottomGrayboder listitemInfoWrap">
-                <view class="likeinfo">
-                    <image class="likebtn" src="http://qty83k.creatby.com/materials/origin/c5656ef00d38d89eae437c5a9102f8fa_origin.png"/>
-                    <text class="c-block likeinfo_count">1</text>
+            <navigator url="../detail/detail">
+                <view class="image_thumbView" hover-class="navigator-hover">
+                    <image class="image_thumb" mode="aspectFit" src="http://ac-uzd1umfo.clouddn.com/50497754573cb4d06608.jpeg"/>
                 </view>
-                <text class="listitem_creattime">2016.10.29</text>
-            </view>
-        </view>
-        <view class="listitemWrap">
-            <navigator class="image_thumbView" hover-class="navigator-hover" url="../detail/detail">
-                <image class="image_thumb" mode="aspectFit" src="http://qty83k.creatby.com/materials/origin/a383e2bb8c19dab5ecd7ea09eafe97ea_origin.jpg"
-                       style="background-image: url(http://qty83k.creatby.com/materials/origin/a383e2bb8c19dab5ecd7ea09eafe97ea_origin.jpg); background-size: contain; background-position: center center; background-repeat: no-repeat; "/>
+                <text class="text_description">“外斑一颗，内斑一窝”
+                    这句话一点都不夸张！
+                    斑点的生成与扩散，主要是黑色素积累过多，爆发于一处，进而扩散加深，分裂蔓延直达全脸的过程。
+                    时间拖得越长，黑色素沉积越多，扩散越广，不要觉得斑点刚刚出来就不在意，忽视它只会让你淡斑的时候更加困难！
+                    所以淡斑会有个提取加代谢加修复的过程！
+                    千万不要图方便省事用那种激素祛斑的产品
+                    平时一定要注意补水➕防晒‼️
+                </text>
             </navigator>
-            <text class="text_description">大朴的这款羽绒被采用 95% 的白鹅绒，轻盈蓬松，具有极好的回弹性，轻盈保暖，夜晚就像睡在云朵上一般轻柔自然。 经过立衬处理，让鹅绒均匀分布，提升保暖性和舒适度。</text>
-            <view class="bottomGrayboder listitemInfoWrap">
-                <view class="likeinfo">
-                    <image class="likebtn" src="http://qty83k.creatby.com/materials/origin/c5656ef00d38d89eae437c5a9102f8fa_origin.png"/>
-                    <text class="c-block likeinfo_count">1</text>
-                </view>
-                <text class="listitem_creattime">2016.10.29</text>
-            </view>
-        </view>
-        <view class="listitemWrap">
-            <navigator class="image_thumbView" hover-class="navigator-hover" url="../detail/detail">
-                <image class="image_thumb" mode="aspectFit" src="http://qty83k.creatby.com/materials/origin/091c46e636f48704741f1721cca0bbab_origin.jpg"/>
-            </navigator>
-            <text class="text_description">此小野不是岳父大人的那位小野，不过呆萌系数绝对够了。四色可选，每个的小图案都不一样。说是装硬币，手机钱包也都能放进去。</text>
             <view class="bottomGrayboder listitemInfoWrap">
                 <view class="likeinfo">
                     <image class="likebtn" src="http://qty83k.creatby.com/materials/origin/c5656ef00d38d89eae437c5a9102f8fa_origin.png"/>
