@@ -120,6 +120,7 @@ radio-group {
 }
 
 .navigator-view {
+    vertical-align: middle;
     display: flex;
     padding: 11.25rpx 18.75rpx;
     justify-content: space-between;
@@ -317,6 +318,9 @@ radio-group {
     height: 30px;
     align-items: center;
     padding-left: 37.5rpx;
+    position:fixed;
+    width:100%;
+    bottom:0rpx;
 }
 
 .wx-text_IvYWrJ {

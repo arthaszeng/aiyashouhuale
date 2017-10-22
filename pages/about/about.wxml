@@ -8,7 +8,6 @@
             <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/cart.png"/>
         </view>
     </view>
-
     <view class="wx-scroll-view_PmrL5K" lower-threshold="50" scroll-y="true">
         <view class="c-minheight logo" bindtap="goIndex">
             <image class="top" mode="aspectFill" src="../../images/logo.jpeg"/>

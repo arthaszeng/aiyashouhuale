@@ -39,5 +39,23 @@ Page({
     wx.navigateTo({
       url: "../edit/edit"
     })
+  },
+
+  goList() {
+    wx.navigateTo({
+      url: "../list/list"
+    })
+  },
+
+  goRecommend() {
+    wx.navigateTo({
+      url: "../recommend/recommend"
+    });
+  },
+
+  goEditGood() {
+    wx.navigateTo({
+      url: "../editgood/editgood"
+    });
   }
 });

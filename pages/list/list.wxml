@@ -11,65 +11,15 @@
     <scroll-view class="shop-scoll-view" lower-threshold="50" scroll-y="True"
                  style="overflow-x: hidden; overflow-y: auto;" upper-threshold="50">
         <view class="wx-view_UeEarn">
-            <view class="wx-view_WjSmLp3">
-                <navigator class="wx-navigator_csHYE4" hover-class="navigator-hover">
-                    <image class="wx-image_jfWp5t" mode="aspectFill" src="/images/tattoo_1.jpeg"/>
+            <view class="wx-view_WjSmLp3" wx:for="{{goods}}">
+                <navigator class="wx-navigator_csHYE4" url="../detail/detail?id={{item.objectId}}">
+                    <image class="wx-image_jfWp5t" mode="aspectFill" src="{{item.images[0]}}"/>
                 </navigator>
                 <view class="wx-view_apr7IN">
-                    <text class="c-block wx-text_VwMJai2">$55</text>
+                    <text class="c-block wx-text_VwMJai2">￥{{item.price}}</text>
                     <image class="add-cart-image" mode="scaleToFill" src="/images/cart.png"/>
                 </view>
-                <text class="c-block wx-text_yCrHg7">ASOS PREMIUM Spot Mesh Maxi Dress</text>
-            </view>
-            <view class="wx-view_WjSmLp3">
-                <navigator class="wx-navigator_csHYE4" hover-class="navigator-hover">
-                    <image class="wx-image_jfWp5t" mode="aspectFill" src="/images/tattoo_2.jpg"/>
-                </navigator>
-                <view class="wx-view_apr7IN">
-                    <text class="c-block wx-text_VwMJai2">$55</text>
-                    <image class="add-cart-image" mode="scaleToFill" src="/images/cart.png"/>
-                </view>
-                <text class="c-block wx-text_yCrHg7">ASOS Lace Top Dobby Maxi Dress</text>
-            </view>
-            <view class="wx-view_WjSmLp3">
-                <navigator class="wx-navigator_csHYE4" hover-class="navigator-hover">
-                    <image class="wx-image_jfWp5t" mode="aspectFill" src="/images/tattoo_3.jpg"/>
-                </navigator>
-                <view class="wx-view_apr7IN">
-                    <text class="c-block wx-text_VwMJai2">$55</text>
-                    <image class="add-cart-image" mode="scaleToFill" src="/images/cart.png"/>
-                </view>
-                <text class="c-block wx-text_yCrHg7">ASOS PREMIUM Spot Mesh Maxi Dress</text>
-            </view>
-            <view class="wx-view_WjSmLp3">
-                <navigator class="wx-navigator_csHYE4" hover-class="navigator-hover">
-                    <image class="wx-image_jfWp5t" mode="aspectFill" src="/images/tattoo_4.jpg"/>
-                </navigator>
-                <view class="wx-view_apr7IN">
-                    <text class="c-block wx-text_VwMJai2">$55</text>
-                    <image class="add-cart-image" mode="scaleToFill" src="/images/cart.png"/>
-                </view>
-                <text class="c-block wx-text_yCrHg7">ASOS PREMIUM Spot Mesh Maxi Dress</text>
-            </view>
-            <view class="wx-view_WjSmLp3">
-                <navigator class="wx-navigator_csHYE4" hover-class="navigator-hover">
-                    <image class="wx-image_jfWp5t" mode="aspectFill" src="/images/tattoo_5.jpg"/>
-                </navigator>
-                <view class="wx-view_apr7IN">
-                    <text class="c-block wx-text_VwMJai2">$55</text>
-                    <image class="add-cart-image" mode="scaleToFill" src="/images/cart.png"/>
-                </view>
-                <text class="c-block wx-text_yCrHg7">ASOS PREMIUM Spot Mesh Maxi Dress</text>
-            </view>
-            <view class="wx-view_WjSmLp3">
-                <navigator class="wx-navigator_csHYE4" hover-class="navigator-hover">
-                    <image class="wx-image_jfWp5t" mode="aspectFill" src="/images/tattoo_6.jpg"/>
-                </navigator>
-                <view class="wx-view_apr7IN">
-                    <text class="c-block wx-text_VwMJai2">$55</text>
-                    <image class="add-cart-image" mode="scaleToFill" src="/images/cart.png"/>
-                </view>
-                <text class="c-block wx-text_yCrHg7">ASOS PREMIUM Spot Mesh Maxi Dress</text>
+                <text class="c-block wx-text_yCrHg7">{{item.name}}</text>
             </view>
         </view>
         <view class="wx-view_heG5MD">

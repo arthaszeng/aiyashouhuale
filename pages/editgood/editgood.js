@@ -13,19 +13,20 @@ Page({
   onLoad: function (query) {
     common.showLoading();
     if ('id' in query) {
-      new AV.Query('Recommend').equalTo('objectId', query.id).first()
-        .then(recommend => {
-          console.log(recommend);
-          this.setData(Object.assign({}, {
-              good: recommend,
-              name: recommend.attributes.name,
-              description: recommend.attributes.description,
+      new AV.Query('Good').equalTo('objectId', query.id).first()
+        .then(good => {
+            console.log(good);
+            this.setData(Object.assign({}, {
+              good: good,
+              name: good.attributes.name,
+              price: good.attributes.price,
+              description: good.attributes.description,
               images: {
                 files: [],
-                urls: recommend.attributes.images
+                urls: good.attributes.images
               }
             }));
-        },
+          },
           function (error) {
             console.error(error);
           });
@@ -45,10 +46,11 @@ Page({
     })
   },
 
-  saveRecommend: function () {
-    const recommend = new AV.Object('Recommend');
-    recommend.set('description', this.data.description);
-    recommend.set('title', this.data.name);
+  saveGood: function () {
+    const good = new AV.Object('Good');
+    good.set('description', this.data.description);
+    good.set('name', this.data.name);
+    good.set('price', this.data.price);
 
     const localImages = this.data.images;
     const localFiles = localImages.files;
@@ -71,8 +73,8 @@ Page({
             }
           }
         }
-        recommend.set('images', localUrls);
-        return recommend.save();
+        good.set('images', localUrls);
+        return good.save();
       }).then(() => {
         common.showSuccessAndBack("保存成功");
         wx.removeStorage({
@@ -169,17 +171,19 @@ Page({
       data: this.data.images.files
     });
   },
-
   fetchImageEditCache: function () {
     return wx.getStorageSync('imageEditCache') || [];
   },
-
-  updateTitle: function (e) {
+  updateName: function (e) {
     this.setData({
-      title: e.detail.value
+      name: e.detail.value
     });
   },
-
+  updatePrice: function (e) {
+    this.setData({
+      price: e.detail.value
+    });
+  },
   updateDescription: function (e) {
     this.setData({
       description: e.detail.value

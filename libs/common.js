@@ -129,6 +129,26 @@ function fetchCommodityByObjectId(id) {
     })
 }
 
+function fetchRecommends() {
+  const query = new AV.Query('Recommend');
+  query.addDescending('createdAt');
+  return Promise.resolve(query.find());
+}
+
+function fetchGoods() {
+  const query = new AV.Query('Good');
+  query.addDescending('createdAt');
+  return Promise.resolve(query.find());
+}
+
+function fetchGoodByObjectId(id) {
+  return new AV.Query('Good')
+    .equalTo('objectId', id)
+    .addDescending('createdAt')
+    .first();
+}
+
+// ---------------------
 function validateCodeId(id) {
   return true;
 }
@@ -308,9 +328,6 @@ function redirectToHint (hintType) {
   });
 }
 
-
-
-
 function removeItemByValue(arr, targetItem) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === targetItem) {
@@ -329,7 +346,6 @@ function arrContain(arr, targetItem) {
   return -1;
 }
 
-
 module.exports = {
   validateCodeId,
   getCAGMapsByCommodity,
@@ -341,6 +357,10 @@ module.exports = {
   fetchCommodityById,
   fetchAgentByObjectId,
   fetchCommodityByObjectId,
+  fetchUserByName,
+  fetchRecommends,
+  fetchGoods,
+  fetchGoodByObjectId,
   parseScanningResult,
   judgeRole,
   registerRole,
@@ -348,12 +368,12 @@ module.exports = {
   bindAgentToAnUser,
   hasRole,
   getUser,
-  fetchUserByName,
   queryAdmins,
   queryGroupsByGroupName,
   SET_ROLE_FOR_TEST,
   getCurrentFormatDate,
   translateTime,
+
   showSuccess,
   showCancel,
   showSuccessAndBack,
@@ -361,6 +381,7 @@ module.exports = {
   showFailAndBack,
   showLoading,
   hideLoading,
+
   isExistingCodeId,
   fetchUsersByGroup,
   isEmptyObject,

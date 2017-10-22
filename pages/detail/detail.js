@@ -1,14 +1,34 @@
-// 获取全局应用程序实例对象
 const app = getApp();
+const common = require('../../libs/common.js');
 
-// 创建页面实例对象
 Page({
   name: "detail",
 
   data: {},
 
-  onLoad() {
-
+  onLoad(query) {
+    common.showLoading();
+    const that = this;
+    if ('id' in query) {
+      common.fetchGoodByObjectId(query.id).then(good => {
+          console.log(good);
+          that.setData(Object.assign({}, {
+            good: good,
+            name: good.attributes.name,
+            price: good.attributes.price,
+            description: good.attributes.description,
+            objectId: good.id,
+            images: {
+              files: [],
+              urls: good.attributes.images
+            }
+          }));
+        },
+        function (error) {
+          console.error(error);
+        });
+    }
+    common.hideLoading();
   },
 
   onReady() {

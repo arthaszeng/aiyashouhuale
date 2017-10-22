@@ -1,3 +1,6 @@
 <view >
-    <button class="goAdd" bindtap="goEdit">Add one</button>
+    <button class="goAdd" bindtap="goEdit">Add One Recommend</button>
+    <button class="goAdd" bindtap="goRecommend">Go Recommend List</button>
+    <button class="goAdd" bindtap="goEditGood">Add One Good</button>
+    <button class="goAdd" bindtap="goList">Go Good List</button>
 </view>

@@ -12,10 +12,11 @@
     "pages/index/index", 
     "pages/list/list",
     "pages/about/about",
-    "pages/feature/feature",
+    "pages/recommend/recommend",
     "pages/detail/detail",
     "pages/admin/admin",
-    "pages/edit/edit"
+    "pages/edit/edit",
+    "pages/editgood/editgood"
   ],
   "networkTimeout": {
     "connectSocket": "", 
