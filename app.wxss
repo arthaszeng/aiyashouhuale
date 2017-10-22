@@ -248,6 +248,14 @@ radio-group {
     background-size: cover;
 }
 
+.admin {
+    width: 100%;
+    height: 260rpx;
+    background-image: url("http://ac-uzd1umfo.clouddn.com/ca267267a2d1d0fb108a.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+
 .about-us {
     width: 100%;
     height: 260rpx;

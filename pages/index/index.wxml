@@ -40,6 +40,9 @@
         <view class="bottom-view">
             <view class="recommend" bindtap="goRecommend"/>
         </view>
+        <view class="bottom-view">
+            <view class="admin" bindtap="goAdmin" style="padding-bottom:30px"/>
+        </view>
         <view class="wx-view_heG5MD">
             <text class="c-block wx-text_IvYWrJ">© 2017 成都半永久皮肤管理</text>
             <view class="wx-view_BkVErl">
@@ -51,6 +54,5 @@
                 </navigator>
             </view>
         </view>
-        <button class="go-admin" bindtap="goAdmin">go admin</button>
     </scroll-view>
 </view>
