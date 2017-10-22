@@ -27,6 +27,12 @@ Page({
     wx.navigateTo({
       url: '../admin/admin',
     });
+  },
+
+  goRecommend: function () {
+    wx.navigateTo({
+      url: '../recommend/recommend',
+    });
   }
 });
 

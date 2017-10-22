@@ -15,7 +15,7 @@
     "pages/recommend/recommend",
     "pages/detail/detail",
     "pages/admin/admin",
-    "pages/edit/edit",
+    "pages/editRecommend/editRecommend",
     "pages/editgood/editgood"
   ],
   "networkTimeout": {

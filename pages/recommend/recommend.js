@@ -12,9 +12,10 @@ Page({
       Promise.resolve(
         recommends.map(recommend => {
           return Object.assign({}, {
-            name: recommend.attributes.name,
+            title: recommend.attributes.title,
             description: recommend.attributes.description,
             images: recommend.attributes.images,
+            goodLink: recommend.attributes.goodLink,
             objectId: recommend.id
           });
         })).then(results => {

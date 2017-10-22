@@ -18,7 +18,7 @@ Page({
           console.log(recommend);
           this.setData(Object.assign({}, {
               good: recommend,
-              name: recommend.attributes.name,
+              title: recommend.attributes.title,
               description: recommend.attributes.description,
               images: {
                 files: [],
@@ -48,7 +48,7 @@ Page({
   saveRecommend: function () {
     const recommend = new AV.Object('Recommend');
     recommend.set('description', this.data.description);
-    recommend.set('title', this.data.name);
+    recommend.set('title', this.data.title);
 
     const localImages = this.data.images;
     const localFiles = localImages.files;

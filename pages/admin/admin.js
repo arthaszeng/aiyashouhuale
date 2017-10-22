@@ -37,7 +37,7 @@ Page({
 
   goEdit() {
     wx.navigateTo({
-      url: "../edit/edit"
+      url: "../editRecommend/editRecommend"
     })
   },
 

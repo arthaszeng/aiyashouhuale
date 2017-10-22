@@ -11,7 +11,7 @@
     <view class="c-minheight wx-scroll-view_MBKQjG" lower-threshold="50" scroll-y="True" style="overflow-x: hidden; overflow-y:auto;"
                  upper-threshold="50">
         <view class="listitemWrap" wx:for="{{recommends}}">
-            <navigator url="../detail/detail">
+            <navigator url="../detail/detail?id={{item.goodLink}}">
                 <swiper class="image_thumbView" hover-class="navigator-hover">
                     <swiper-item wx:for="{{item.images}}">
                         <image class="image_thumb" mode="aspectFit" src="{{item}}"/>
