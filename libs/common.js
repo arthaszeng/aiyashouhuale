@@ -135,9 +135,12 @@ function fetchRecommends() {
   return Promise.resolve(query.find());
 }
 
-function fetchGoods() {
+function fetchGoods(tag) {
   const query = new AV.Query('Good');
   query.addDescending('createdAt');
+  if (tag !== 'all') {
+    query.equalTo('tag', tag)
+  }
   return Promise.resolve(query.find());
 }
 
