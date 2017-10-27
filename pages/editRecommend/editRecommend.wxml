@@ -1,4 +1,4 @@
-<scoll-view class="container">
+<view style="">
     <view class="navigator-view">
         <view class="navigator-left" bindtap="goBack">
             <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/return.png"/>
@@ -6,7 +6,8 @@
         <text class="title-view">编辑推文</text>
         <button class="save-button" bindtap="saveRecommend">保存</button>
     </view>
-    <view class="image-container">
+    <scoll-view class="container">
+        <view class="image-container">
             <view class="line-1">
                 <view class="image-1 weui-uploader__input-box" bindtap="chooseImage" wx:if="{{images.urls.length===0}}"/>
                 <image class="weui-uploader__img image-1" src="{{images.urls[0]}}" bindtap="imageAction" mode="aspectFill" wx:else="{{images.urls.length===0}}"
@@ -42,6 +43,11 @@
                     <input class="weui-input" placeholder="请输入标题" bindinput="updateTitle" value="{{title}}"/>
                 </view>
             </view>
+            <view class="weui-cell weui-cell_input">
+                <picker class="weui-cell__bd" bindchange="updateTag" value="{{index}}" range="{{tags}}" range-key="{{'name'}}">
+                    <view class="weui-input">{{tagName}}</view>
+                </picker>
+            </view>
             <view class="weui-cells weui-cells_after-title">
                 <view class="weui-cell">
                     <view class="weui-cell__bd">
@@ -49,10 +55,6 @@
                     </view>
                 </view>
             </view>
-            <view class="weui-cell weui-cell_input">
-                <picker class="weui-cell__bd" bindchange="updateTag" value="{{index}}" range="{{tags}}" range-key="{{'name'}}">
-                    <view class="weui-input">{{tagName}}</view>
-                </picker>
-            </view>
         </view>
-</scoll-view>
+    </scoll-view>
+</view>
