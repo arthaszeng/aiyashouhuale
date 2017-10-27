@@ -119,7 +119,3 @@ outline:none;}
 .wx-scroll-view_MBKQjG{padding-top: 41px; height: 100%; }
 .wx-input_aN3YXL:focus{text-align: left; width: 600rpx; transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 0.3s ease; }
 .wx-navigator_n3vQYd:active{transform: rotate(0deg) scale(0.98) translate(0%, 0%); transition: all 0s ease;}
-
-
-
-

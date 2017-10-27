@@ -43,13 +43,13 @@ Page({
 
   goList() {
     wx.navigateTo({
-      url: "../list/list"
+      url: "../list/list?mode=true"
     })
   },
 
   goRecommend() {
     wx.navigateTo({
-      url: "../recommend/recommend"
+      url: "../recommend/recommend?mode=true"
     });
   },
 

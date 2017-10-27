@@ -1,12 +1,19 @@
 const app = getApp();
 const common = require('../../libs/common.js');
+const timer = require('../../libs/dateformater.js');
 
 Page({
-  name: "feature",
+  data: {
+    adminMode: false
+  },
 
-  data: {},
+  onLoad(query) {
+    if ('mode' in query) {
+      this.setData({
+        adminMode: query.mode
+      });
+    }
 
-  onLoad() {
     const that = this;
     common.fetchRecommends().then(recommends => {
       Promise.resolve(
@@ -16,7 +23,8 @@ Page({
             description: recommend.attributes.description,
             images: recommend.attributes.images,
             goodLink: recommend.attributes.goodLink,
-            objectId: recommend.id
+            objectId: recommend.id,
+            updateAt: timer(recommend.updatedAt, 'yyyy年mm月dd日'),
           });
         })).then(results => {
         that.setData({
@@ -25,29 +33,31 @@ Page({
       });
     });
   },
-
-  onReady() {
-  },
-
-  onShow() {
-  },
-
-  onHide() {
-
-  },
-
-  onUnload() {
-
-  },
-
-  onPullDownRefresh() {
-
-  },
-
+  
   goBack() {
     wx.navigateBack({
       delta: 1
     })
   },
+
+  deleteRecommend(e) {
+    const that = this;
+
+    common.showLoading("删除中");
+    const objectId = e.currentTarget.id;
+    common.deleteObject('Recommend', objectId).then(
+      function () {
+        let updatedRecommends = that.data.recommends;
+        common.removeItemByObjectId(updatedRecommends, objectId);
+        that.setData({
+          recommends: updatedRecommends
+        });
+        common.showSuccess('删除成功');
+      }, function (error) {
+        console.log(error);
+        common.showFail('删除失败');
+      }
+    );
+  }
 });
 

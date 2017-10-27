@@ -23,6 +23,11 @@ function deleteRole(roleName) {
     })
 }
 
+function deleteObject(objectName, objectId) {
+  const object = AV.Object.createWithoutData(objectName, objectId);
+  return object.destroy();
+}
+
 function bindAgentToAnUser(agentId) {
   const user = AV.User.current();
   user.set('agentId', agentId);
@@ -339,6 +344,14 @@ function removeItemByValue(arr, targetItem) {
     }
   }
 }
+function removeItemByObjectId(arr, objectId) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].objectId === objectId) {
+      arr.splice(i, 1);
+      break;
+    }
+  }
+}
 
 function arrContain(arr, targetItem) {
   for (let i = 0; i < arr.length; i++) {
@@ -392,5 +405,8 @@ module.exports = {
   redirectToHint,
 
   removeItemByValue,
-  arrContain
+  removeItemByObjectId,
+  arrContain,
+
+  deleteObject
 };

@@ -3,6 +3,32 @@ const common = require('../../libs/common.js');
 const app = getApp();
 
 Page({
+  data: {
+    tags: [
+      {
+        value: 'face',
+        name: '焕肤'
+      },
+      {
+        value: 'eye&brow',
+        name: '眉眼'
+      },
+      {
+        value: 'clear',
+        name: '护理'
+      },
+      {
+        value: 'tattoo',
+        name: '纹身'
+      },
+      {
+        value: 'other',
+        name: '其他'
+      }
+    ],
+    tagName: "当前商品链接：暂无"
+  },
+
   onLoad: function () {
     this.setData(Object.assign({}, {
       width: app.globalData.windowInfo.width,
@@ -46,9 +72,13 @@ Page({
   },
 
   saveRecommend: function () {
+    common.showLoading("保存中");
+
     const recommend = new AV.Object('Recommend');
     recommend.set('description', this.data.description);
     recommend.set('title', this.data.title);
+    recommend.set('tag', this.data.tag);
+
 
     const localImages = this.data.images;
     const localFiles = localImages.files;
@@ -183,6 +213,13 @@ Page({
   updateDescription: function (e) {
     this.setData({
       description: e.detail.value
+    });
+  },
+
+  updateTag: function (e) {
+    this.setData({
+      tag: this.data.tags[e.detail.value].value,
+      tagName: this.data.tags[e.detail.value].name
     });
   },
 });

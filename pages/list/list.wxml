@@ -17,7 +17,8 @@
                 </navigator>
                 <view class="wx-view_apr7IN">
                     <text class="c-block wx-text_VwMJai2">￥{{item.price}}</text>
-                    <image class="add-cart-image" mode="scaleToFill" src="/images/cart.png"/>
+                    <image class="add-cart-image" mode="scaleToFill" src="/images/cart.png" wx:if="{{!adminMode}}"/>
+                    <image class="add-cart-image" mode="scaleToFill" src="/images/delete.png" wx:if="{{adminMode}}" bindtap="deleteGood" id="{{item.objectId}}"/>
                 </view>
                 <text class="c-block wx-text_yCrHg7">{{item.name}}</text>
             </view>

@@ -3,7 +3,6 @@ const common = require('../../libs/common.js');
 const app = getApp();
 
 Page({
-
   data: {
     tags: [
       {
@@ -27,6 +26,7 @@ Page({
         name: '其他'
       }
     ],
+    tagName: "当前商品链接：暂无"
   },
 
   onLoad: function () {
@@ -75,6 +75,8 @@ Page({
   },
 
   saveGood: function () {
+    common.showLoading("保存中");
+
     const good = new AV.Object('Good');
     good.set('description', this.data.description);
     good.set('name', this.data.name);
@@ -93,7 +95,6 @@ Page({
         (m, p) => m.then(v => AV.Promise.all([...v, p()])),
         AV.Promise.resolve([])
       ).then(images => {
-        console.log(images);
         for (let i = 0; i < images.length; i++) {
           for (let j = 0; j < localUrls.length; j++) {
             if (localUrls[j] === localFiles[i]) {
@@ -186,7 +187,6 @@ Page({
   },
 
   previewImage: function (e) {
-    console.log(e)
     wx.previewImage({
       current: this.data.images.urls[e.currentTarget.id],
       urls: this.data.images.urls
@@ -219,7 +219,8 @@ Page({
   },
   updateTag: function (e) {
     this.setData({
-      tag: this.data.tags[e.detail.value].value
+      tag: this.data.tags[e.detail.value].value,
+      tagName: this.data.tags[e.detail.value].name
     });
   },
 });

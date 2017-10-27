@@ -11,7 +11,7 @@
     <view class="c-minheight wx-scroll-view_MBKQjG" lower-threshold="50" scroll-y="True" style="overflow-x: hidden; overflow-y:auto;"
                  upper-threshold="50">
         <view class="listitemWrap" wx:for="{{recommends}}">
-            <navigator url="../detail/detail?id={{item.goodLink}}">
+            <navigator url="../list/list?tag={{item.tag}}">
                 <swiper class="image_thumbView" hover-class="navigator-hover">
                     <swiper-item wx:for="{{item.images}}">
                         <image class="image_thumb" mode="aspectFit" src="{{item}}"/>
@@ -21,11 +21,11 @@
                 <text class="text_description" style="font-size:24rpx">{{item.description}}</text>
             </navigator>
             <view class="bottomGrayboder listitemInfoWrap">
-                <!--<view class="likeinfo">-->
-                    <!--<image class="likebtn" src="http://qty83k.creatby.com/materials/origin/c5656ef00d38d89eae437c5a9102f8fa_origin.png"/>-->
-                    <!--<text class="c-block likeinfo_count">1</text>-->
-                <!--</view>-->
-                <text class="listitem_creattime">2016.10.29</text>
+                <view class="likeinfo">
+                    <text class="c-block likeinfo_count">{{item.likeCount||1}}</text>
+                </view>
+                <text class="listitem_creattime">{{item.updateAt}}</text>
+                <text class="listitem_creattime" catchtap="deleteRecommend" id="{{item.objectId}}">删除</text>
             </view>
         </view>
     </view>
