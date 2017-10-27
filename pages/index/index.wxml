@@ -44,8 +44,8 @@
         <view class="bottom-view">
             <view class="recommend" bindtap="goRecommend"/>
         </view>
-        <view class="bottom-view">
-            <view class="admin" bindtap="goAdmin" style="padding-bottom:30px"/>
+        <view class="bottom-view" style="padding-bottom:30px">
+            <view class="admin" bindtap="goAdmin"/>
         </view>
         <view class="wx-view_heG5MD">
             <text class="c-block wx-text_IvYWrJ">© 2017 成都半永久皮肤管理</text>

@@ -11,9 +11,6 @@
     <view class="wx-scroll-view_PmrL5K" lower-threshold="50" scroll-y="true">
         <view class="c-minheight logo" bindtap="goIndex">
             <image class="top" mode="aspectFill" src="../../images/logo.jpeg"/>
-            <view class="about-us" bindtap="goIndex">
-                <text class="c-block wx-text_ew47fd">关 于 我 们</text>
-            </view>
         </view>
         <view>
             <text class="c-block wx-text_wkZUUT" style="margin-top:40rpx">成都半永久皮肤管理</text>
@@ -46,16 +43,5 @@
     <view class="bg-map">
         <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" iconPath="/images/location.png" markers="{{markers}}"
              show-location="true" style="width: 100%; height: 380rpx;"/>
-    </view>
-    <view class="wx-view_heG5MD">
-        <text class="c-block wx-text_IvYWrJ">© 2017 成都半永久皮肤管理</text>
-        <view class="wx-view_BkVErl">
-            <navigator class="wx-navigator_ghtWwU" hover-class="navigator-hover">
-                <text class="c-block wx-text_fmMFdc">Full Site</text>
-            </navigator>
-            <navigator class="wx-navigator_ghtWwU" hover-class="navigator-hover">
-                <text class="c-block wx-text_fmMFdc">Privacy Policy</text>
-            </navigator>
-        </view>
     </view>
 </view>
