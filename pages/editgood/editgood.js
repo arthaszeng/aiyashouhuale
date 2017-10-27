@@ -3,6 +3,32 @@ const common = require('../../libs/common.js');
 const app = getApp();
 
 Page({
+
+  data: {
+    tags: [
+      {
+        value: 'face',
+        name: '焕肤'
+      },
+      {
+        value: 'eye&brow',
+        name: '眉眼'
+      },
+      {
+        value: 'clear',
+        name: '护理'
+      },
+      {
+        value: 'tattoo',
+        name: '纹身'
+      },
+      {
+        value: 'other',
+        name: '其他'
+      }
+    ],
+  },
+
   onLoad: function () {
     this.setData(Object.assign({}, {
       width: app.globalData.windowInfo.width,
@@ -19,8 +45,10 @@ Page({
             this.setData(Object.assign({}, {
               good: good,
               name: good.attributes.name,
+              tag: good.attributes.tag,
               price: good.attributes.price,
               description: good.attributes.description,
+              objectId: good.id,
               images: {
                 files: [],
                 urls: good.attributes.images
@@ -187,6 +215,11 @@ Page({
   updateDescription: function (e) {
     this.setData({
       description: e.detail.value
+    });
+  },
+  updateTag: function (e) {
+    this.setData({
+      tag: this.data.tags[e.detail.value].value
     });
   },
 });

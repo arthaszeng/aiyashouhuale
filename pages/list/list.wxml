@@ -22,6 +22,9 @@
                 <text class="c-block wx-text_yCrHg7">{{item.name}}</text>
             </view>
         </view>
+        <view class="alert" wx:if="{{goods.length===0}}">
+            没有更多了
+        </view>
         <view class="wx-view_heG5MD">
             <text class="c-block wx-text_IvYWrJ">© 2017 成都半永久皮肤管理</text>
             <view class="wx-view_BkVErl">

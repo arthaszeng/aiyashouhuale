@@ -33,6 +33,14 @@ Page({
     wx.navigateTo({
       url: '../recommend/recommend',
     });
+  },
+
+  goList(event) {
+    const tag = event.currentTarget.dataset.tag;
+    const url = '../list/list' + (tag ? `?tag=${tag}` : '');
+    wx.navigateTo({
+      url: url,
+    });
   }
 });
 

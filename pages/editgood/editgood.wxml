@@ -7,52 +7,57 @@
         <button class="save-button" bindtap="saveGood">保存</button>
     </view>
     <view class="image-container">
-            <view class="line-1">
-                <view class="image-1 weui-uploader__input-box" bindtap="chooseImage" wx:if="{{images.urls.length===0}}"/>
-                <image class="weui-uploader__img image-1" src="{{images.urls[0]}}" bindtap="imageAction" mode="aspectFill" wx:else="{{images.urls.length===0}}"
-                       id="0"/>
+        <view class="line-1">
+            <view class="image-1 weui-uploader__input-box" bindtap="chooseImage" wx:if="{{images.urls.length===0}}"/>
+            <image class="weui-uploader__img image-1" src="{{images.urls[0]}}" bindtap="imageAction" mode="aspectFill" wx:else="{{images.urls.length===0}}"
+                   id="0"/>
 
-                <view class="image-2-and-3">
-                    <view class="image weui-uploader__input-box" bindtap="chooseImage" style="margin-bottom: 10rpx" wx:if="{{images.urls.length<=1}}"/>
-                    <image class="weui-uploader__img image" style="margin-bottom: 10rpx" src="{{images.urls[1]}}" wx:else="{{images.urls.length<=1}}" id="1"
-                           bindtap="imageAction" mode="aspectFill"/>
-
-                    <view class="image weui-uploader__input-box" bindtap="chooseImage" wx:if="{{images.urls.length<=2}}"/>
-                    <image class="weui-uploader__img image" src="{{images.urls[2]}}" wx:else="{{images.urls.length<=2}}" id="2"
-                           bindtap="imageAction" mode="aspectFill"/>
-                </view>
-            </view>
-            <view class="line-2">
-                <view class="image weui-uploader__input-box" style="margin-right: 10rpx" bindtap="chooseImage" wx:if="{{images.urls.length<=5}}"/>
-                <image class="weui-uploader__img image" style="margin-right: 10rpx" src="{{images.urls[5]}}" wx:else="{{images.urls.length<=5}}" id="5"
+            <view class="image-2-and-3">
+                <view class="image weui-uploader__input-box" bindtap="chooseImage" style="margin-bottom: 10rpx" wx:if="{{images.urls.length<=1}}"/>
+                <image class="weui-uploader__img image" style="margin-bottom: 10rpx" src="{{images.urls[1]}}" wx:else="{{images.urls.length<=1}}" id="1"
                        bindtap="imageAction" mode="aspectFill"/>
 
-                <view class="image weui-uploader__input-box" style="margin-right: 10rpx" bindtap="chooseImage" wx:if="{{images.urls.length<=4}}"/>
-                <image class="weui-uploader__img image" style="margin-right: 10rpx" src="{{images.urls[4]}}" wx:else="{{images.urls.length<=4}}" id="4"
-                       bindtap="imageAction" mode="aspectFill"/>
-
-                <view class="image weui-uploader__input-box" bindtap="chooseImage" wx:if="{{images.urls.length<=3}}"/>
-                <image class="weui-uploader__img image" src="{{images.urls[3]}}" wx:else="{{images.urls.length<=3}}" id="3"
+                <view class="image weui-uploader__input-box" bindtap="chooseImage" wx:if="{{images.urls.length<=2}}"/>
+                <image class="weui-uploader__img image" src="{{images.urls[2]}}" wx:else="{{images.urls.length<=2}}" id="2"
                        bindtap="imageAction" mode="aspectFill"/>
             </view>
+        </view>
+        <view class="line-2">
+            <view class="image weui-uploader__input-box" style="margin-right: 10rpx" bindtap="chooseImage" wx:if="{{images.urls.length<=5}}"/>
+            <image class="weui-uploader__img image" style="margin-right: 10rpx" src="{{images.urls[5]}}" wx:else="{{images.urls.length<=5}}" id="5"
+                   bindtap="imageAction" mode="aspectFill"/>
+
+            <view class="image weui-uploader__input-box" style="margin-right: 10rpx" bindtap="chooseImage" wx:if="{{images.urls.length<=4}}"/>
+            <image class="weui-uploader__img image" style="margin-right: 10rpx" src="{{images.urls[4]}}" wx:else="{{images.urls.length<=4}}" id="4"
+                   bindtap="imageAction" mode="aspectFill"/>
+
+            <view class="image weui-uploader__input-box" bindtap="chooseImage" wx:if="{{images.urls.length<=3}}"/>
+            <image class="weui-uploader__img image" src="{{images.urls[3]}}" wx:else="{{images.urls.length<=3}}" id="3"
+                   bindtap="imageAction" mode="aspectFill"/>
+        </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入名称" bindinput="updateName" value="{{name}}"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入价格" bindinput="updatePrice" value="{{price}}"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <picker class="weui-cell__bd" bindchange="updateTag" value="{{index}}" range="{{tags}}" range-key="{{'name'}}">
+                <view class="weui-input">请选择类别: {{value}}</view>
+            </picker>
         </view>
         <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_input">
+            <view class="weui-cell">
                 <view class="weui-cell__bd">
-                    <input class="weui-input" placeholder="请输入名称" bindinput="updateName" value="{{name}}"/>
-                </view>
-            </view>
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__bd">
-                    <input class="weui-input" placeholder="请输入价格" bindinput="updatePrice" value="{{price}}"/>
-                </view>
-            </view>
-            <view class="weui-cells weui-cells_after-title">
-                <view class="weui-cell">
-                    <view class="weui-cell__bd">
-                        <textarea placeholder="请输入描述" class="weui-textarea" style="height: 200rpx" bindinput="updateDescription" value="{{description}}"/>
-                    </view>
+                    <textarea placeholder="请输入描述" class="weui-textarea" style="height: 200rpx" bindinput="updateDescription" value="{{description}}"/>
                 </view>
             </view>
         </view>
+    </view>
 </scoll-view>

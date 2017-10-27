@@ -2,9 +2,13 @@ var app = getApp();
 const common = require('../../libs/common.js');
 
 Page({
-  onLoad() {
+  onLoad(query) {
     const that = this;
-    common.fetchGoods().then(goods => {
+    let tag = 'all';
+    if ('tag' in query) {
+      tag = query.tag;
+    }
+    common.fetchGoods(tag).then(goods => {
       Promise.resolve(
         goods.map(good => {
           return Object.assign({}, {
@@ -12,6 +16,7 @@ Page({
             price: good.attributes.price,
             description: good.attributes.description,
             images: good.attributes.images,
+            tag: good.attributes.tag,
             objectId: good.id
           });
         })).then(results => {
