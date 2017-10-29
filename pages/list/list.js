@@ -3,24 +3,27 @@ const common = require('../../libs/common.js');
 
 Page({
   data: {
-    adminMode: false
+    adminMode: false,
+    tag: 'all'
   },
 
   onLoad(query) {
-    common.showLoading();
-
-    const that = this;
-    let tag = 'all';
-
     if ('tag' in query) {
-      tag = query.tag;
+      this.setData({
+        tag: query.tag
+      })
     }
     if ('mode' in query) {
       this.setData({
         adminMode: query.mode
       });
     }
-    common.fetchGoods(tag).then(goods => {
+  },
+
+  onShow() {
+    const that = this;
+    common.showLoading();
+    common.fetchGoods(this.data.tag).then(goods => {
       Promise.resolve(
         goods.map(good => {
           return Object.assign({}, {
@@ -42,6 +45,7 @@ Page({
       common.hideLoading()
     });
   },
+
   goIndex() {
     wx.navigateTo({
       url: '../index/index',
@@ -54,11 +58,16 @@ Page({
     })
   },
 
-  deleteGood(e) {
-    const that = this;
+  modifyGood(objectId) {
+    const url = `../editgood/editgood?id=${objectId}`;
+    wx.navigateTo({
+      url: url,
+    });
+  },
 
+  deleteGood(objectId) {
     common.showLoading("删除中");
-    const objectId = e.currentTarget.id;
+    const that = this;
     common.deleteObject('Good', objectId).then(
       function (success) {
         let updatedGoods = that.data.goods;
@@ -68,9 +77,33 @@ Page({
         });
         common.showSuccess('删除成功');
       }, function (error) {
+        console.error(error);
         common.showFail('删除失败');
       }
     );
+  },
+
+  openOpMenu(e) {
+    const index = e.currentTarget.id;
+    const that = this;
+    wx.showActionSheet({
+      itemList: ['编辑', '删除', '置顶(即将上线)'],
+      success: function (res) {
+        switch (res.tapIndex) {
+          case 0:
+            return that.modifyGood(index);
+          case 1:
+            return that.deleteGood(index);
+          case 2:
+            return that.setToTop(index);
+          default:
+            return;
+        }
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
+    })
   },
 
   openMenu(e) {
@@ -98,7 +131,7 @@ Page({
     })
   },
 
-  phoneCall () {
+  phoneCall() {
     wx.makePhoneCall({
       phoneNumber: '15208125605' //仅为示例，并非真实的电话号码
     })
@@ -113,6 +146,10 @@ Page({
   },
 
   bookVisiting() {
+    common.showSuccess("此功能即将上线")
+  },
+
+  setToTop(index) {
     common.showSuccess("此功能即将上线")
   }
 });

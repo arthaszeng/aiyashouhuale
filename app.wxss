@@ -397,7 +397,6 @@ radio-group {
 .shop-scoll-view {
     height: 100%;
     text-align: center;
-    padding-top: 83rpx;
 }
 
 .wx-view_UeEarn {
@@ -561,4 +560,6 @@ radio-group {
     box-sizing: border-box;
 }
 
-
+.my-save-button {
+    margin: 40rpx
+}

@@ -56,7 +56,7 @@ Page({
 
   goRecommend: function () {
     const mode = this.data.adminMode && !app.globalData.customerModeForce;
-    const url = '../recommend/recommend' + (mode ? `?mode=${mode}` : '');
+    const url = '../recommend/recommend?' + (mode ? `mode=${mode}` : '');
     wx.navigateTo({
       url: url,
     });
@@ -64,7 +64,8 @@ Page({
 
   goList(event) {
     const tag = event.currentTarget.dataset.tag;
-    const url = '../list/list' + (tag ? `?tag=${tag}` : '');
+    const mode = this.data.adminMode && !app.globalData.customerModeForce;
+    const url = '../list/list?' + (tag ? `tag=${tag}&` : '') + (mode ? `mode=${mode}` : '');
     wx.navigateTo({
       url: url,
     });

@@ -3,40 +3,15 @@ const common = require('../../libs/common.js');
 const app = getApp();
 
 Page({
-  data: {
-    tags: [
-      {
-        value: 'face',
-        name: '焕肤'
-      },
-      {
-        value: 'eye&brow',
-        name: '眉眼'
-      },
-      {
-        value: 'clear',
-        name: '护理'
-      },
-      {
-        value: 'tattoo',
-        name: '纹身'
-      },
-      {
-        value: 'other',
-        name: '其他'
-      }
-    ],
-    tagName: "当前商品链接：暂无"
-  },
-
-  onLoad: function () {
+  onLoad: function (query) {
     this.setData(Object.assign({}, {
       width: app.globalData.windowInfo.width,
-      height: app.globalData.windowInfo.height
-    }))
-  },
+      height: app.globalData.windowInfo.height,
+      tags: app.globalData.tags,
+      tagName: app.globalData.emptyTagName,
+      isModified: false
+    }));
 
-  onLoad: function (query) {
     common.showLoading();
     if ('id' in query) {
       new AV.Query('Good').equalTo('objectId', query.id).first()
@@ -52,7 +27,8 @@ Page({
               images: {
                 files: [],
                 urls: good.attributes.images
-              }
+              },
+              isModified: true
             }));
           },
           function (error) {
@@ -77,7 +53,7 @@ Page({
   saveGood: function () {
     common.showLoading("保存中");
 
-    const good = new AV.Object('Good');
+    const good = this.data.isModified ? this.data.good : new AV.Object('Good');
     good.set('description', this.data.description);
     good.set('name', this.data.name);
     good.set('price', this.data.price);
@@ -114,6 +90,13 @@ Page({
         console.log(error);
         common.showFail("保存失败");
       })
+    } else {
+      return good.save().then(() => {
+        common.showSuccessAndBack("保存成功");
+      }).catch(error => {
+        console.log(error);
+        common.showFail("保存失败");
+      });
     }
   },
 

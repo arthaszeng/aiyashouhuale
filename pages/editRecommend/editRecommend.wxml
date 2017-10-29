@@ -1,11 +1,4 @@
 <view style="">
-    <!--<view class="navigator-view">-->
-        <!--<view class="navigator-left" bindtap="goBack">-->
-            <!--<image class="wx-image_SC1alK2" mode="aspectFill" src="/images/return.png"/>-->
-        <!--</view>-->
-        <!--<text class="title-view">编辑推文</text>-->
-        <!--<button class="save-button" bindtap="saveRecommend">保存</button>-->
-    <!--</view>-->
     <scoll-view class="container">
         <view class="image-container">
             <view class="line-1">
@@ -55,6 +48,10 @@
                     </view>
                 </view>
             </view>
+        </view>
+        <view>
+            <button class="my-save-button" type="primary" bindtap="saveRecommend">保存</button>
+            <button class="my-save-button" type="default" bindtap="goBack">返回</button>
         </view>
     </scoll-view>
 </view>

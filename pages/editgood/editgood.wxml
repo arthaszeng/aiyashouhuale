@@ -60,4 +60,8 @@
             </view>
         </view>
     </view>
+    <view>
+        <button class="my-save-button" type="primary" bindtap="saveGood">保存</button>
+        <button class="my-save-button" type="default" bindtap="goBack">返回</button>
+    </view>
 </scoll-view>

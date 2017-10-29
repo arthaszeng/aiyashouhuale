@@ -1,13 +1,4 @@
 <view>
-    <!--<view class="navigator-view">-->
-    <!--<view class="navigator-left" bindtap="goBack">-->
-    <!--<image class="wx-image_SC1alK2" mode="aspectFill" src="/images/return.png"/>-->
-    <!--</view>-->
-    <!--<image class="logo-image" mode="aspectFit" src="/images/waterlily.jpeg"/>-->
-    <!--<view class="navigator-right">-->
-    <!--<image class="wx-image_SC1alK2" mode="aspectFill" src="/images/cart.png"/>-->
-    <!--</view>-->
-    <!--</view>-->
     <view class="c-minheight wx-scroll-view_MBKQjG" lower-threshold="50" scroll-y="True" style="overflow-x: hidden; overflow-y:auto;"
           upper-threshold="50">
         <view class="listitemWrap" wx:for="{{recommends}}">

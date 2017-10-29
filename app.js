@@ -10,7 +10,30 @@ App({
     customerModeForce: false,
     userList: null,
     userInfo: null,
-    windowInfo: {}
+    windowInfo: {},
+    tags: [
+      {
+        value: 'face',
+        name: '焕肤'
+      },
+      {
+        value: 'eye',
+        name: '眉眼'
+      },
+      {
+        value: 'clear',
+        name: '护理'
+      },
+      {
+        value: 'tattoo',
+        name: '纹身'
+      },
+      {
+        value: 'other',
+        name: '其他'
+      }
+    ],
+    emptyTagName: "当前商品链接：暂无"
   },
 
   onLaunch: function () {

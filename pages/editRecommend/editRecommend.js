@@ -3,36 +3,12 @@ const common = require('../../libs/common.js');
 const app = getApp();
 
 Page({
-  data: {
-    tags: [
-      {
-        value: 'face',
-        name: '焕肤'
-      },
-      {
-        value: 'eye',
-        name: '眉眼'
-      },
-      {
-        value: 'clear',
-        name: '护理'
-      },
-      {
-        value: 'tattoo',
-        name: '纹身'
-      },
-      {
-        value: 'other',
-        name: '其他'
-      }
-    ],
-    tagName: "当前商品链接：暂无"
-  },
-
   onLoad: function (query) {
     this.setData(Object.assign({}, {
       width: app.globalData.windowInfo.width,
-      height: app.globalData.windowInfo.height
+      height: app.globalData.windowInfo.height,
+      tags: app.globalData.tags,
+      tagName: app.globalData.emptyTagName
     }));
 
     common.showLoading();
