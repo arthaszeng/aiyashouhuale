@@ -1,26 +1,21 @@
 <view class="c-minheight wx-view_RUFx1n" style="height:100%; width:100%；over-flow">
-    <!--<view class="navigator-view">-->
-        <!--<view class="navigator-left" bindtap="goBack">-->
-            <!--<image class="wx-image_SC1alK2" mode="aspectFill" src="/images/return.png"/>-->
-        <!--</view>-->
-        <!--<image class="logo-image" mode="aspectFit" src="/images/waterlily.jpeg"/>-->
-        <!--<view class="navigator-right">-->
-            <!--<image class="wx-image_SC1alK2" mode="aspectFill" src="/images/cart.png"/>-->
-        <!--</view>-->
-    <!--</view>-->
     <view class="wx-scroll-view_PmrL5K" lower-threshold="50" scroll-y="true">
         <view class="c-minheight logo" bindtap="goIndex">
             <image class="top" mode="aspectFill" src="../../images/logo.jpeg"/>
         </view>
         <view>
-            <text class="c-block wx-text_wkZUUT" style="margin-top:40rpx">成都半永久皮肤管理</text>
-            <text class="c-block wx-text_9DrpXU">Bla bla bla bla</text>
-            <text class="c-block wx-text_9DrpXU">Bla bla bla bla</text>
-            <text class="c-block wx-text_9DrpXU">Bla bla bla bla</text>
-            <text class="c-block wx-text_9DrpXU">Bla bla bla bla</text>
-            <text class="c-block wx-text_9DrpXU">Bla bla bla bla</text>
-            <text class="c-block wx-text_9DrpXU">Bla bla bla bla</text>
-            <text class="c-block wx-text_9DrpXU">Bla bla bla bla</text>
+            <text class="c-block description">
+                WaterLily是一家专业定制的工作室,
+                店主曾获得半永久大赛季军😘,
+                爱美的小仙女们,
+                欢迎来小店下凡一起变美吧,
+                本店到处都是拍照的好角落哦,
+                到店有惊喜喔.😘😘😘
+                成都区域的小仙女可以上门为您服务,
+                微信号：G19921113,
+                联系电话：15208125605,
+                欢迎您的到来.
+            </text>
         </view>
         <view class="bg-picture">
             <image class="wx-image_jfWp5t" mode="aspectFill"

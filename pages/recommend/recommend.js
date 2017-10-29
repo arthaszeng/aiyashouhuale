@@ -50,22 +50,31 @@ Page({
 
   deleteRecommend(e) {
     const that = this;
-
-    common.showLoading("删除中");
-    const objectId = e.currentTarget.id;
-    common.deleteObject('Recommend', objectId).then(
-      function () {
-        let updatedRecommends = that.data.recommends;
-        common.removeItemByObjectId(updatedRecommends, objectId);
-        that.setData({
-          recommends: updatedRecommends
-        });
-        common.showSuccess('删除成功');
-      }, function (error) {
-        console.log(error);
-        common.showFail('删除失败');
+    wx.showModal({
+      title: '温馨提醒',
+      content: '高阿姨，想清楚了再删哦~.~',
+      success: function(res) {
+        if (res.confirm) {
+          common.showLoading("删除中");
+          const objectId = e.currentTarget.id;
+          common.deleteObject('Recommend', objectId).then(
+            function () {
+              let updatedRecommends = that.data.recommends;
+              common.removeItemByObjectId(updatedRecommends, objectId);
+              that.setData({
+                recommends: updatedRecommends
+              });
+              common.showSuccess('删除成功');
+            }, function (error) {
+              console.log(error);
+              common.showFail('删除失败');
+            }
+          );
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
       }
-    );
+    })
   },
 
   modifyRecommend(e) {

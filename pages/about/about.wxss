@@ -1,4 +1,14 @@
-page {
+.page {
     position: relative;
     z-index: 10;
+}
+
+.description{
+    text-align: center;
+    margin-right: 70rpx;
+    margin-left: 70rpx;
+    margin-top: 100rpx;
+    line-height: 60rpx;
+    line-break: loose;
+    font-size: 30rpx;
 }

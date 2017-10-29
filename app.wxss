@@ -272,17 +272,16 @@ radio-group {
 
 .wx-scroll-view_vN6ObB {
     padding: 18.75rpx;
-    height: 360px;
+    height: 265px;
 }
 
 .wx-view_HBPWHD {
     text-align: center;
-    width: 250px;
-    height: 315px;
+    width: 215px;
+    height: 265px;
     background-color: rgb(255, 255, 255);
     margin-right: 10px;
-    margin-left: 10px;
-    min-width: 250px;
+    min-width: 215px;
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: auto;
@@ -290,18 +289,18 @@ radio-group {
 
 .wx-image_WKcTHu {
     width: 100%;
+    height: 205px
 }
 
 .wx-view_c3y71b {
     overflow: hidden;
     background-color: rgb(225, 226, 228);
-    padding-top: 15px;
 }
 
 .wx-text_yCrHg62 {
     color: rgb(61, 61, 61);
     text-align: center;
-    padding: 10px;
+    padding-bottom: 10rpx;
 }
 
 .wx-image_jfWp5t2 {
