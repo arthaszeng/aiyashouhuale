@@ -2,43 +2,43 @@
     <scroll-view class="wx-scroll-view_PmrL5K" lower-threshold="50" scroll-y="True"
                  style="overflow-x: hidden; overflow-y: auto;" upper-threshold="50">
         <view class="top-view">
-            <view class="discount"/>
-            <view class="recommend" bindtap="goRecommend"/>
+            <view class="top-image"/>
+        </view>
+        <view class="text-view-behind-prod">
+            <text class="text-behind-prod">我们的服务</text>
         </view>
         <view class="wx-view_c3y71b">
-            <scroll-view class="c-minheight wx-scroll-view_vN6ObB" lower-threshold="50" scroll-x="True"
+            <scroll-view class="c-minheight scroll-product-view" lower-threshold="50" scroll-x="True"
                          style="overflow-x: auto; overflow-y: hidden; " upper-threshold="50">
                 <view class="wx-view_CJITSi">
-                    <view class="c-minheight wx-view_HBPWHD" bindtap="goList" data-tag="face">
-                        <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/gold.jpg"/>
-                        <text class="c-block c-ellipse wx-text_yCrHg62">焕肤</text>
+                    <view class="c-minheight product-view" bindtap="goList" data-tag="face">
+                        <image class="product-view-image" mode="aspectFill" src="../../images/gold.jpg"/>
+                        <text class="c-block c-ellipse product-view-text">焕肤</text>
                     </view>
-                    <view class="c-minheight wx-view_HBPWHD" bindtap="goList" data-tag="eye">
-                        <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/brow.jpg"/>
-                        <text class="c-block wx-text_yCrHg62">眉飞睫舞</text>
+                    <view class="c-minheight product-view" bindtap="goList" data-tag="eye">
+                        <image class="product-view-image" mode="aspectFill" src="../../images/brow.jpg"/>
+                        <text class="c-block product-view-text">眉飞睫舞</text>
                     </view>
-                    <view class="c-minheight wx-view_HBPWHD" bindtap="goList" data-tag="clear">
-                        <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/face.jpeg"/>
-                        <text class="c-block c-ellipse wx-text_yCrHg62">护理</text>
+                    <view class="c-minheight product-view" bindtap="goList" data-tag="clear">
+                        <image class="product-view-image" mode="aspectFill" src="../../images/face.jpeg"/>
+                        <text class="c-block c-ellipse product-view-text">护理</text>
                     </view>
-                    <view class="c-minheight wx-view_HBPWHD" bindtap="goList" data-tag="tattoo">
-                        <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/tattoo.jpeg"/>
-                        <text class="c-block c-ellipse wx-text_yCrHg62">半永久纹身</text>
+                    <view class="c-minheight product-view" bindtap="goList" data-tag="tattoo">
+                        <image class="product-view-image" mode="aspectFill" src="../../images/tattoo.jpeg"/>
+                        <text class="c-block c-ellipse product-view-text">半永久纹身</text>
                     </view>
-                    <view class="c-minheight wx-view_HBPWHD" bindtap="goList" data-tag="all">
-                        <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/wantmore.jpeg"/>
-                        <text class="c-block c-ellipse wx-text_yCrHg62">更多</text>
+                    <view class="c-minheight product-view" bindtap="goList" data-tag="all">
+                        <image class="product-view-image" mode="aspectFill" src="../../images/wantmore.jpeg"/>
+                        <text class="c-block c-ellipse product-view-text">更多</text>
                     </view>
                 </view>
             </scroll-view>
         </view>
         <view style="padding-bottom:30px">
-            <view class="bottom-view">
-                <view class="about-us" bindtap="goAbout"/>
-            </view>
-            <view class="bottom-view" wx:if="{{adminMode}}">
-                <view class="admin" bindtap="goAdmin"/>
-            </view>
+            <view class="discount xiushi"/>
+            <view class="recommend xiushi" bindtap="goRecommend"/>
+            <view class="about-us xiushi" bindtap="goAbout"/>
+            <view class="admin xiushi" bindtap="goAdmin" wx:if="{{adminMode}}"/>
         </view>
         <view class="wx-view_heG5MD">
             <text class="c-block wx-text_IvYWrJ">© 2017 成都半永久皮肤管理</text>

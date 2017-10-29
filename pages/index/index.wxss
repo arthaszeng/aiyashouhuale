@@ -1,5 +1,13 @@
-page {
+.page {
     position: relative;
     z-index: 10;
     overflow: hidden;
+}
+
+.top-image{
+    width: 100%;
+    height: 600rpx;
+    background-image: url("http://ac-uzd1umfo.clouddn.com/52b161f72d1c22787e3f.jpeg");
+    background-position: center;
+    background-size: cover;
 }
