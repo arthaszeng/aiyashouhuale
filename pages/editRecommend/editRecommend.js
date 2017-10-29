@@ -8,7 +8,8 @@ Page({
       width: app.globalData.windowInfo.width,
       height: app.globalData.windowInfo.height,
       tags: app.globalData.tags,
-      tagName: app.globalData.emptyTagName
+      tagName: app.globalData.emptyTagName,
+      isModified: false
     }));
 
     common.showLoading();
@@ -27,7 +28,8 @@ Page({
               images: {
                 files: [],
                 urls: recommend.attributes.images
-              }
+              },
+              isModified: true
             }));
           },
           function (error) {
@@ -52,11 +54,10 @@ Page({
   saveRecommend: function () {
     common.showLoading("保存中");
 
-    const recommend = new AV.Object('Recommend');
+    const recommend = this.data.isModified ? this.data.recommend : new AV.Object('Recommend');
     recommend.set('description', this.data.description);
     recommend.set('title', this.data.title);
     recommend.set('tag', this.data.tag);
-
 
     const localImages = this.data.images;
     const localFiles = localImages.files;
@@ -82,6 +83,16 @@ Page({
         recommend.set('images', localUrls);
         return recommend.save();
       }).then(() => {
+        common.showSuccessAndBack("保存成功");
+        wx.removeStorage({
+          key: 'imageEditCache'
+        });
+      }).catch(error => {
+        console.log(error);
+        common.showFail("保存失败");
+      })
+    } else {
+      recommend.save().then(() => {
         common.showSuccessAndBack("保存成功");
         wx.removeStorage({
           key: 'imageEditCache'

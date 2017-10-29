@@ -13,8 +13,11 @@ Page({
         adminMode: query.mode
       });
     }
+  },
 
+  onShow() {
     const that = this;
+    common.showLoading();
     common.fetchRecommends().then(recommends => {
       Promise.resolve(
         recommends.map(recommend => {
@@ -31,10 +34,14 @@ Page({
         that.setData({
           recommends: results
         });
+        common.hideLoading();
       });
+    }).catch(error => {
+      common.hideLoading();
+      console.error(error);
     });
   },
-  
+
   goBack() {
     wx.navigateBack({
       delta: 1
