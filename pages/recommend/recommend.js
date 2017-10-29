@@ -4,7 +4,7 @@ const timer = require('../../libs/dateformater.js');
 
 Page({
   data: {
-    adminMode: false
+    adminMode: false,
   },
 
   onLoad(query) {
@@ -59,6 +59,13 @@ Page({
         common.showFail('删除失败');
       }
     );
+  },
+
+  modifyRecommend(e) {
+    const url = `../editRecommend/editRecommend?id=${e.currentTarget.id}`;
+    wx.navigateTo({
+      url: url,
+    });
   }
 });
 

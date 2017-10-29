@@ -1,11 +1,11 @@
 <scoll-view class="container">
-    <view class="navigator-view">
-        <view class="navigator-left" bindtap="goBack">
-            <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/return.png"/>
-        </view>
-        <text class="title-view">编辑商品</text>
-        <button class="save-button" bindtap="saveGood">保存</button>
-    </view>
+    <!--<view class="navigator-view">-->
+        <!--<view class="navigator-left" bindtap="goBack">-->
+            <!--<image class="wx-image_SC1alK2" mode="aspectFill" src="/images/return.png"/>-->
+        <!--</view>-->
+        <!--<text class="title-view">编辑商品</text>-->
+        <!--<button class="save-button" bindtap="saveGood">保存</button>-->
+    <!--</view>-->
     <view class="image-container">
         <view class="line-1">
             <view class="image-1 weui-uploader__input-box" bindtap="chooseImage" wx:if="{{images.urls.length===0}}"/>

@@ -7,7 +7,7 @@ AV.init({
 
 App({
   globalData: {
-    customerModelForce: false,
+    customerModeForce: false,
     userList: null,
     userInfo: null,
     windowInfo: {}

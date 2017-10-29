@@ -12,7 +12,7 @@ Page({
     const that = this;
     common.showLoading();
 
-    const modelForce = app.globalData.customerModelForce;
+    const modelForce = app.globalData.customerModeForce;
 
     if (!modelForce) {
       Promise.resolve(AV.User.current()).then(user => {
@@ -55,8 +55,10 @@ Page({
   },
 
   goRecommend: function () {
+    const mode = this.data.adminMode && !app.globalData.customerModeForce;
+    const url = '../recommend/recommend' + (mode ? `?mode=${mode}` : '');
     wx.navigateTo({
-      url: '../recommend/recommend',
+      url: url,
     });
   },
 

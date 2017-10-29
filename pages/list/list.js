@@ -42,11 +42,6 @@ Page({
       common.hideLoading()
     });
   },
-
-  onReady() {
-  },
-  onShow() {
-  },
   goIndex() {
     wx.navigateTo({
       url: '../index/index',
@@ -76,6 +71,49 @@ Page({
         common.showFail('删除失败');
       }
     );
+  },
+
+  openMenu(e) {
+    const index = e.currentTarget.id;
+    const that = this;
+    wx.showActionSheet({
+      itemList: ['电话咨询', '线路规划（即将上线）', '在线预约（即将上线）', '上门服务（即将上线）'],
+      success: function (res) {
+        switch (res.tapIndex) {
+          case 0:
+            return that.phoneCall();
+          case 1:
+            return that.goToMap();
+          case 2:
+            return that.bookOnline(index);
+          case 3:
+            return that.bookVisiting(index);
+          default:
+            return;
+        }
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
+    })
+  },
+
+  phoneCall () {
+    wx.makePhoneCall({
+      phoneNumber: '15208125605' //仅为示例，并非真实的电话号码
+    })
+  },
+
+  goToMap() {
+    common.showSuccess("此功能即将上线")
+  },
+
+  bookOnline() {
+    common.showSuccess("此功能即将上线")
+  },
+
+  bookVisiting() {
+    common.showSuccess("此功能即将上线")
   }
 });
 

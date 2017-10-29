@@ -1,13 +1,13 @@
 <view class="c-minheight wx-view_RUFx1n" style="height:100%; width:100%；over-flow">
-    <view class="navigator-view">
-        <view class="navigator-left" bindtap="goBack">
-            <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/return.png"/>
-        </view>
-        <image class="logo-image" mode="aspectFit" src="/images/waterlily.jpeg"/>
-        <view class="navigator-right">
-            <image class="wx-image_SC1alK2" mode="aspectFill" src="/images/cart.png"/>
-        </view>
-    </view>
+    <!--<view class="navigator-view">-->
+        <!--<view class="navigator-left" bindtap="goBack">-->
+            <!--<image class="wx-image_SC1alK2" mode="aspectFill" src="/images/return.png"/>-->
+        <!--</view>-->
+        <!--<image class="logo-image" mode="aspectFit" src="/images/waterlily.jpeg"/>-->
+        <!--<view class="navigator-right">-->
+            <!--<image class="wx-image_SC1alK2" mode="aspectFill" src="/images/cart.png"/>-->
+        <!--</view>-->
+    <!--</view>-->
     <view class="wx-scroll-view_PmrL5K" lower-threshold="50" scroll-y="true">
         <view class="c-minheight logo" bindtap="goIndex">
             <image class="top" mode="aspectFill" src="../../images/logo.jpeg"/>

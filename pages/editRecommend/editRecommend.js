@@ -29,29 +29,31 @@ Page({
     tagName: "当前商品链接：暂无"
   },
 
-  onLoad: function () {
+  onLoad: function (query) {
     this.setData(Object.assign({}, {
       width: app.globalData.windowInfo.width,
       height: app.globalData.windowInfo.height
-    }))
-  },
+    }));
 
-  onLoad: function (query) {
     common.showLoading();
     if ('id' in query) {
       new AV.Query('Recommend').equalTo('objectId', query.id).first()
         .then(recommend => {
-          console.log(recommend);
-          this.setData(Object.assign({}, {
-              good: recommend,
+            let tagObject = this.data.tags.filter(item => {
+              return item.value === recommend.attributes.tag
+            });
+            this.setData(Object.assign({}, {
+              recommend: recommend,
               title: recommend.attributes.title,
               description: recommend.attributes.description,
+              tag: tagObject[0].value,
+              tagName: tagObject[0].name,
               images: {
                 files: [],
                 urls: recommend.attributes.images
               }
             }));
-        },
+          },
           function (error) {
             console.error(error);
           });

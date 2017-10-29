@@ -32,7 +32,7 @@ Page({
   },
 
   switchToCustomer() {
-    app.globalData.customerModelForce = true;
+    app.globalData.customerModeForce = true;
     wx.redirectTo({
       url: "../index/index"
     })

@@ -225,7 +225,6 @@ radio-group {
     flex-flow: column wrap;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 6%;
 }
 .bottom-view {
     display: flex;
