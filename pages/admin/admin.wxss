@@ -1,0 +1,4 @@
+.goAdd {
+    padding: 5rpx;
+    margin: 50rpx;
+}

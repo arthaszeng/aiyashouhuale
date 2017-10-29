@@ -20,6 +20,7 @@ Page({
         recommends.map(recommend => {
           return Object.assign({}, {
             title: recommend.attributes.title,
+            tag: recommend.attributes.tag,
             description: recommend.attributes.description,
             images: recommend.attributes.images,
             goodLink: recommend.attributes.goodLink,

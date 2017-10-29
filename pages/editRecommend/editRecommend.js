@@ -10,7 +10,7 @@ Page({
         name: '焕肤'
       },
       {
-        value: 'eye&brow',
+        value: 'eye',
         name: '眉眼'
       },
       {

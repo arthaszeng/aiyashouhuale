@@ -1,6 +1,7 @@
 <view >
-    <button class="goAdd" bindtap="goEdit">Add One Recommend</button>
-    <button class="goAdd" bindtap="goRecommend">Go Recommend List</button>
-    <button class="goAdd" bindtap="goEditGood">Add One Good</button>
-    <button class="goAdd" bindtap="goList">Go Good List</button>
+    <button class="goAdd" bindtap="goEditGood">添加一个商品</button>
+    <button class="goAdd" bindtap="goEdit">添加一个推荐／推文</button>
+    <button class="goAdd" bindtap="goList">前往商品列表</button>
+    <button class="goAdd" bindtap="goRecommend">前往推文列表</button>
+    <button class="goAdd" bindtap="switchToCustomer" type="warn">切换回游客模式</button>
 </view>

@@ -22,7 +22,7 @@
             </navigator>
             <view class="bottomGrayboder listitemInfoWrap">
                 <view class="likeinfo">
-                    <text class="c-block likeinfo_count">{{item.likeCount||1}}</text>
+                    <text class="c-block likeinfo_count">{{item.likeCount||190}}</text>
                 </view>
                 <text class="listitem_creattime">{{item.updateAt}}</text>
                 <text class="listitem_creattime" catchtap="deleteRecommend" id="{{item.objectId}}">删除</text>

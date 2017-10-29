@@ -7,6 +7,8 @@ Page({
   },
 
   onLoad(query) {
+    common.showLoading();
+
     const that = this;
     let tag = 'all';
 
@@ -18,7 +20,6 @@ Page({
         adminMode: query.mode
       });
     }
-
     common.fetchGoods(tag).then(goods => {
       Promise.resolve(
         goods.map(good => {
@@ -34,7 +35,11 @@ Page({
         that.setData({
           goods: results
         });
+        common.hideLoading();
       });
+    }).catch(error => {
+      console.log(error);
+      common.hideLoading()
     });
   },
 

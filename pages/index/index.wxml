@@ -22,7 +22,7 @@
                         <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/gold.jpg"/>
                         <text class="c-block c-ellipse wx-text_yCrHg62">焕肤</text>
                     </view>
-                    <view class="c-minheight wx-view_HBPWHD" bindtap="goList" data-tag="eye&brow">
+                    <view class="c-minheight wx-view_HBPWHD" bindtap="goList" data-tag="eye">
                         <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/brow.jpg"/>
                         <text class="c-block wx-text_yCrHg62">眉飞睫舞</text>
                     </view>
@@ -31,21 +31,23 @@
                         <text class="c-block c-ellipse wx-text_yCrHg62">护理</text>
                     </view>
                     <view class="c-minheight wx-view_HBPWHD" bindtap="goList" data-tag="tattoo">
-                        <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/lip.jpg"/>
+                        <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/tattoo.jpeg"/>
                         <text class="c-block c-ellipse wx-text_yCrHg62">半永久纹身</text>
                     </view>
                     <view class="c-minheight wx-view_HBPWHD" bindtap="goList" data-tag="all">
-                        <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/lip.jpg"/>
+                        <image class="wx-image_WKcTHu" mode="aspectFill" src="../../images/wantmore.jpeg"/>
                         <text class="c-block c-ellipse wx-text_yCrHg62">更多</text>
                     </view>
                 </view>
             </scroll-view>
         </view>
-        <view class="bottom-view">
-            <view class="recommend" bindtap="goRecommend"/>
-        </view>
-        <view class="bottom-view" style="padding-bottom:30px">
-            <view class="admin" bindtap="goAdmin"/>
+        <view style="padding-bottom:30px">
+            <view class="bottom-view">
+                <view class="recommend" bindtap="goRecommend"/>
+            </view>
+            <view class="bottom-view" wx:if="{{adminMode}}">
+                <view class="admin" bindtap="goAdmin"/>
+            </view>
         </view>
         <view class="wx-view_heG5MD">
             <text class="c-block wx-text_IvYWrJ">© 2017 成都半永久皮肤管理</text>

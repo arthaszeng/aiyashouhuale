@@ -1,7 +1,32 @@
-var app = getApp();
+const app = getApp();
+const common = require('../../libs/common.js');
+const AV = require('../../libs/av-weapp-min.js');
+
 
 Page({
+  data: {
+    adminMode: false
+  },
+
   onLoad() {
+    const that = this;
+    common.showLoading();
+
+    const modelForce = app.globalData.customerModelForce;
+
+    if (!modelForce) {
+      Promise.resolve(AV.User.current()).then(user => {
+        return Promise.resolve(user.getRoles());
+      }).then(roles => {
+        that.setData({
+          adminMode: roles !== undefined && roles.length !== 0
+        })
+      }).catch(error => {
+        console.error(error);
+        common.hideLoading();
+      })
+    }
+    common.hideLoading()
   },
 
   onReady() {

@@ -1,34 +1,6 @@
 const app = getApp();
 
-// 创建页面实例对象
 Page({
-  name: "detail",
-
-  data: {},
-
-  onLoad() {
-
-  },
-
-  onReady() {
-
-  },
-
-  onShow() {
-  },
-
-  onHide() {
-
-  },
-
-  onUnload() {
-
-  },
-
-  onPullDownRefresh() {
-
-  },
-
   goBack() {
     wx.navigateBack({
       delta: 1
@@ -57,5 +29,13 @@ Page({
     wx.navigateTo({
       url: "../editgood/editgood"
     });
+  },
+
+  switchToCustomer() {
+    app.globalData.customerModelForce = true;
+    wx.redirectTo({
+      url: "../index/index"
+    })
   }
+
 });

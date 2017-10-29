@@ -81,6 +81,7 @@ Page({
     good.set('description', this.data.description);
     good.set('name', this.data.name);
     good.set('price', this.data.price);
+    good.set('tag', this.data.tag);
 
     const localImages = this.data.images;
     const localFiles = localImages.files;

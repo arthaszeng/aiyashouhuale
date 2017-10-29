@@ -7,6 +7,7 @@ AV.init({
 
 App({
   globalData: {
+    customerModelForce: false,
     userList: null,
     userInfo: null,
     windowInfo: {}
@@ -33,7 +34,6 @@ App({
       this.syncUserInfo();
     }).catch(error => console.error(error.message));
   },
-
 
   syncUserInfo: function () {
     let that = this;
