@@ -1,3 +1,6 @@
+
+require('coolsite.config.js');
+
 const app = getApp();
 const common = require('../../libs/common.js');
 
@@ -8,6 +11,7 @@ Page({
 
   onLoad(query) {
     common.showLoading();
+    app.coolsite360.register(this);
     const that = this;
     if ('id' in query) {
       common.fetchGoodByObjectId(query.id).then(good => {
@@ -30,6 +34,12 @@ Page({
     }
     common.hideLoading();
   },
+
+  onShow () {
+    // 执行coolsite360交互组件展示
+    app.coolsite360.onShow(this);
+  },
+
 
   goBack() {
     wx.navigateBack({
@@ -77,5 +87,35 @@ Page({
 
   bookVisiting() {
     common.showSuccess("此功能即将上线")
-  }
+  },
+
+  tap_e2bd485d:function(e){
+    //触发coolsite360交互事件
+    app.coolsite360.fireEvent(e,this);
+  },
+
+  tap_d6c84484:function(e){
+    //触发coolsite360交互事件
+    app.coolsite360.fireEvent(e,this);
+  },
+
+  tap_3ec69114:function(e){
+    //触发coolsite360交互事件
+    app.coolsite360.fireEvent(e,this);
+  },
+
+  tap_3013baf2:function(e){
+    //触发coolsite360交互事件
+    app.coolsite360.fireEvent(e,this);
+  },
+
+  tap_d5808da3:function(e){
+    //触发coolsite360交互事件
+    app.coolsite360.fireEvent(e,this);
+  },
+
+  tap_22930b74:function(e){
+    //触发coolsite360交互事件
+    app.coolsite360.fireEvent(e,this);
+  },
 });

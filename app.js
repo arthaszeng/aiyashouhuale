@@ -1,4 +1,5 @@
 const AV = require('./libs/av-weapp-min.js');
+var coolsite360 = require('./coolsite/index.js');
 
 AV.init({
   appId: 'Uzd1uMFoOPdTMGegjCU1VoQx-gzGzoHsz',
@@ -6,6 +7,7 @@ AV.init({
 });
 
 App({
+  coolsite360: coolsite360,
   globalData: {
     customerModeForce: false,
     userList: null,
