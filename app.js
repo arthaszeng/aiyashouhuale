@@ -78,16 +78,14 @@ App({
       }
     })
   },
-  getUserInfo: function(cb) {
+  getUserInfo: function (cb) {
     AV.User.loginWithWeapp().then(userInfo => {
       const user = AV.User.current();
       wx.getUserInfo({
         success: ({
                     userInfo
                   }) => {
-          // 更新当前用户的信息
           user.set(userInfo).save().then(userInfo => {
-            // 成功，此时可在控制台中看到更新后的用户信息
             this.globalData.userInfo = userInfo.toJSON();
             cb(this.globalData.userInfo);
           }).catch(console.error);

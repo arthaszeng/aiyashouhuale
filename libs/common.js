@@ -161,6 +161,10 @@ function validateCodeId(id) {
   return true;
 }
 
+function validateComment(comment) {
+  return comment.length >= 2;
+}
+
 function parseScanningResult(scanningResult) {
   console.log(scanningResult);
 
@@ -297,7 +301,7 @@ function showFail(message) {
 }
 
 function showCancel(message) {
-  wx.showToast({title: message='已取消', icon: "loading", mask: true, duration: 1000});
+  wx.showToast({title: message = '已取消', icon: "loading", mask: true, duration: 1000});
 }
 
 function showFailAndBack(message) {
@@ -330,7 +334,7 @@ function getToday() {
   return dataFormater(new Date(), 'yyyy-mm-dd');
 }
 
-function redirectToHint (hintType) {
+function redirectToHint(hintType) {
   wx.redirectTo({
     url: `../hint/hint?type=${hintType}`
   });
@@ -344,6 +348,7 @@ function removeItemByValue(arr, targetItem) {
     }
   }
 }
+
 function removeItemByObjectId(arr, objectId) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].objectId === objectId) {
@@ -354,16 +359,25 @@ function removeItemByObjectId(arr, objectId) {
 }
 
 function arrContain(arr, targetItem) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === targetItem) {
-      return i;
+  if (arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === targetItem) {
+        return i;
+      }
+
     }
   }
   return -1;
 }
 
+function date() {
+  return dataFormater(new Date(), 'yyyy年mm月dd日');
+}
+
 module.exports = {
   validateCodeId,
+  validateComment,
+
   getCAGMapsByCommodity,
   fetchGroupById,
   fetchMapsByGroup,
@@ -408,5 +422,7 @@ module.exports = {
   removeItemByObjectId,
   arrContain,
 
-  deleteObject
+  deleteObject,
+
+  date
 };
