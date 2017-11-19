@@ -5,7 +5,7 @@
         </swiper-item>
     </swiper>
     <text class="c-block wx-text_V55JEt">{{good.name}}</text>
-    <text class="c-block text_description" style="font-size:22rpx;margin:30rpx">{{good.description}}</text>
+    <text class="c-block text_description" style="font-size:28rpx;margin:30rpx">{{good.description}}</text>
     <view class="wx-view_Ipiy3Y" >
         <navigator class="wx-navigator_8s8V9p"  hover-class="navigator-hover">
             <text class="c-block wx-text_EPMInA" bindtap="openMenu">¥ {{good.price}} 预约</text>

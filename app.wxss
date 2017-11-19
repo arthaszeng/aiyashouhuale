@@ -235,14 +235,14 @@ radio-group {
 .discount {
     width: 100%;
     height: 260rpx;
-    background-image: url("http://ac-uzd1umfo.clouddn.com/d6dac997f97cdc3e986f.jpeg");
+    background-image: url("http://ac-uzd1umfo.clouddn.com/4916f6265f7d1219807c.jpeg");
     background-position: center;
     background-size: cover;
 }
 .recommend {
     width: 100%;
     height: 260rpx;
-    background-image: url("http://ac-uzd1umfo.clouddn.com/0d02e020cba49d1c8b3b.jpeg");
+    background-image: url("http://ac-uzd1umfo.clouddn.com/98a0231d582cbaec1b4a.jpeg");
     background-position: center;
     background-size: cover;
 }
@@ -255,17 +255,19 @@ radio-group {
     background-size: cover;
 }
 
-.xiushi {
-    margin: 20rpx;
-    border-radius: 20rpx;
-}
-
 .about-us {
     width: 100%;
     height: 260rpx;
-    background-image: url("http://ac-uzd1umfo.clouddn.com/6d74ee996a51a340666a.jpeg");
+    background-image: url("http://ac-uzd1umfo.clouddn.com/6dbe02697efd84f8c366.jpeg");
     background-position: center;
     background-size: cover;
+}
+
+.xiushi {
+    margin: 15rpx;
+    border-radius: 20rpx;
+    align-items: center;
+    width: auto;
 }
 
 .top {
@@ -450,7 +452,7 @@ radio-group {
 }
 
 .wx-navigator_csHYE4 {
-    height: 450rpx;
+    height: 380rpx;
     background-color: rgb(237, 237, 237);
     position: relative;
     margin-bottom: 3px;

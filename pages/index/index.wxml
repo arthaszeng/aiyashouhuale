@@ -35,9 +35,9 @@
             </scroll-view>
         </view>
         <view style="padding-bottom:30px">
-            <view class="discount xiushi"/>
-            <view class="recommend xiushi" bindtap="goRecommend"/>
             <view class="about-us xiushi" bindtap="goAbout"/>
+            <view class="recommend xiushi" bindtap="goRecommend"/>
+            <view class="discount xiushi"/>
             <view class="admin xiushi" bindtap="goAdmin" wx:if="{{adminMode}}"/>
         </view>
         <view class="wx-view_heG5MD">
